@@ -14,6 +14,7 @@ export default class ReduxProvider extends React.Component {
   constructor(props){
     super(props);
     this.initialState = INITIAL_STATE;
+    
     if(GLOBAL_CONFIG.adaptive === true){
       this.initialState.wait_for_user_profile = true;
     }

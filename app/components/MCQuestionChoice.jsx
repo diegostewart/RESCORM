@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // NO SE USA
 
 export default class MCQuestionChoice extends React.Component {
   constructor(props){

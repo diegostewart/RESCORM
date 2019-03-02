@@ -4,13 +4,13 @@ let LMS_CONFIG = {
   scorm2004:{
     learner_preference:{
       _children:"audio_level,language,delivery_speed,audio_captioning,difficulty",
-      difficulty:"random",
+      difficulty:0,
     },
   },
   scorm12:{
     student_preference:{
       _children:"audio,language,speed,text,difficulty",
-      difficulty:"random",
+      difficulty:0,
     },
   },
 };
@@ -18,12 +18,12 @@ let LMS_CONFIG = {
 let processConfig = (function(){
   if((LMS_CONFIG.scorm2004) && (LMS_CONFIG.scorm2004.learner_preference)){
     if(LMS_CONFIG.scorm2004.learner_preference.difficulty === "random"){
-      LMS_CONFIG.scorm2004.learner_preference.difficulty = parseInt(Math.random() * 10, 10).toString();
+      LMS_CONFIG.scorm2004.learner_preference.difficulty = parseInt(Math.random() * 3 + 1).toString();
     }
   }
   if((LMS_CONFIG.scorm12) && (LMS_CONFIG.scorm12.student_preference)){
     if(LMS_CONFIG.scorm12.student_preference.difficulty === "random"){
-      LMS_CONFIG.scorm12.student_preference.difficulty = parseInt(Math.random() * 10, 10).toString();
+      LMS_CONFIG.scorm12.student_preference.difficulty = parseInt(Math.random() * 3 + 1).toString();
     }
   }
 })();

@@ -5,31 +5,45 @@ import * as Utils from '../vendors/Utils.js';
 import {addObjectives, resetObjectives, finishApp} from './../reducers/actions';
 
 import QuizHeader from './QuizHeader.jsx';
-import MCQuestion from './MCQuestion.jsx';
+import QuizQuestions from './QuizQuestions.jsx';
 
 export default class Quiz extends React.Component {
   constructor(props){
     super(props);
     let quiz = this.props.quiz;
     let questions = quiz.questions;
+    let inicioSlice;
+    let finalSlice;
 
     // Adaptive behaviour
     // Sort questions based on difficulty
-    let adaptive_sorted = false;
+     let adaptive_sorted = false;
+
     if((this.props.config.adaptive === true) && (typeof props.user_profile === "object") && (typeof props.user_profile.learner_preference === "object") && (typeof props.user_profile.learner_preference.difficulty === "number")){
-      let difficulty = props.user_profile.learner_preference.difficulty;
-      if((difficulty >= 0) && (difficulty <= 10)){
+      let difficulty = props.user_profile.learner_preference.difficulty; 
+      if((difficulty >= 0) && (difficulty <= 3)){
         for(let i = 0; i < questions.length; i++){
-          if((typeof questions[i].difficulty !== "number") || (questions[i].difficulty < 0) || (questions[i].difficulty > 10)){
-            questions[i].difficulty = 5;
+          if((typeof questions[i].dificultad !== "number") || (questions[i].dificultad < 0) || (questions[i].dificultad > 3)){
+            questions[i].dificultad = 1;
           }
-          questions[i].suitability = (10 - Math.abs((questions[i].difficulty - difficulty))) / 10;
+          if(questions[i].dificultad === difficulty){// calculamos solo las preguntas asociadas a nuestra dificultad.
+            if(typeof inicioSlice === "undefined"){
+              inicioSlice = i;
+              finalSlice = inicioSlice;
+            }
+            finalSlice = finalSlice + 1;
+          }
         }
-        questions.sort(function(a, b){ return b.suitability - a.suitability; });
+        questions.sort(function(a, b){ return a.dificultad - b.dificultad; }); // Ordenamos por orden de dificultad
+        //Truncamos el array para solo tener el nivel de dificultad seleccionado:
+        questions = questions.slice(0,finalSlice); // inicioSlice es 0 para que al aumentar dificultades incluyamos las anteriores 
+        questions = Utils.shuffleArray(questions);
         adaptive_sorted = true;
       }
     }
 
+    
+    
     if(adaptive_sorted === false){
       questions = Utils.shuffleArray(questions);
     }
@@ -70,19 +84,25 @@ export default class Quiz extends React.Component {
   render(){
     let currentQuestion = this.state.quiz.questions[this.state.current_question_index - 1];
     let isLastQuestion = (this.state.current_question_index === this.state.quiz.questions.length);
+    let difficulty = this.props.user_profile.learner_preference.difficulty;
 
     let objective = this.props.tracking.objectives["Question" + (this.state.current_question_index)];
     let onNextQuestion = this.onNextQuestion.bind(this);
     let onResetQuiz = this.onResetQuiz.bind(this);
     let currentQuestionRender = "";
 
-    switch (currentQuestion.type){
-    case "multiple_choice":
-      currentQuestionRender = (<MCQuestion question={currentQuestion} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
-      break;
-    default:
-      currentQuestionRender = "Question type not supported";
+    // switch (currentQuestion.type){
+    // case "multiple_choice":
+    if(difficulty<4){
+      currentQuestionRender = (<QuizQuestions question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
     }
+    else{
+      currentQuestionRender = "Question difficulty not supported";
+    }
+      //   break;
+    // default:
+    //   currentQuestionRender = "Question type not supported";
+    // }
 
     return (
       <div className="quiz">

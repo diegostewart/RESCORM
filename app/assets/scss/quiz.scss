@@ -4,6 +4,13 @@ div.quizHeader p {
   margin-bottom: 20px;
 }
 
+div.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 div.question h1 {
   font-size: 20px;
   margin-top: 20px;
@@ -62,7 +69,7 @@ div.question div.questionButtonsWrapper {
   padding: 10px;
 }
 
-div.question div.questionButtonsWrapper button.answerQuestion, div.question div.questionButtonsWrapper button.resetQuestion, div.question div.questionButtonsWrapper button.resetQuiz, div.question div.questionButtonsWrapper button.nextQuestion {
+div.question div.questionButtonsWrapper button.answerAmarillo,div.question div.questionButtonsWrapper button.answerPuntoLimpio, div.question div.questionButtonsWrapper button.answerSIGRES, div.question div.questionButtonsWrapper button.answerMarron, div.question div.questionButtonsWrapper button.answerVerde,div.question div.questionButtonsWrapper button.answerAzul {
   padding: 10px;
   margin-left: 10px;
   color: black;
@@ -73,8 +80,114 @@ div.question div.questionButtonsWrapper button.answerQuestion, div.question div.
   cursor: pointer;
 }
 
-div.question div.questionButtonsWrapper button[disabled]{
-  color: gray;
-  border: 2px solid gray;
-  cursor: default;
+div.levelChoiceButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  }
+
+div.infoScreenWrapper div.images{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+  }
+
+div.infoScreenWrapper div.images img  {
+  margin-right: 20px;
+  } 
+
+
+
+
+  
+
+  div.infoButtonWrapper img, div.infoScreenWrapper a, div.infoScreenWrapper div.images img  {
+    opacity: 0.7;
+    transition: all 0.3s;
+    
+    
+    } 
+
+div.infoButtonWrapper img:hover, div.infoScreenWrapper a:hover, div.infoScreenWrapper div.images img:hover {
+  opacity: 1;
+  cursor: pointer;
+  
+  } 
+
+
+div.infoButtonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+  }  
+
+div.levelChoiceButton button.levelSelect1, div.levelChoiceButton button.levelSelect2, div.levelChoiceButton button.levelSelect3{ 
+  padding: 100px 100px;
+  border-radius: 20%;
+  margin-left: 10px;
+  margin-right: 40px;
+
+  color: black;
+  background: white;
+  border: 4px solid black;
+  font-size: 35px;
+  font-weight: bold;
+  transition: background-color 0.5s, color 0.5s;
+  cursor: pointer;
+}
+
+div.levelChoiceButton button.levelSelect1:hover{ 
+  background-color: rgb(65, 109, 68); 
+  color: white;
+}
+
+html, body, #root{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div.container{
+  height:100%;
+  margin: 0%;
+  background-color: rgb(204, 247, 232);
+}
+div.levelChoiceWrapper{ 
+  height:100%;
+  //background-color: rgb(204, 247, 232);
+  background-image: url("/assets/images/Interfaz/fondo.jpg");
+  
+}
+
+div.levelChoiceWrapper h1{ 
+  text-align: center
+}
+
+div.levelChoiceButton button.levelSelect2:hover{ 
+  
+  background-color: rgb(207, 198, 63); 
+  color: white;
+}
+
+div.levelChoiceButton button.levelSelect3:hover{ 
+  
+  background-color: rgb(179, 47, 47); 
+  color: white;
+}
+
+div.question div.questionButtonsWrapper a {
+  margin-right: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+
+}
+
+div.question div.questionButtonsWrapper a:hover {
+  opacity: 1;
 }
