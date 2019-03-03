@@ -32,6 +32,14 @@ export function objectiveAccomplished(objectiveId, accomplishedScore = null){
     accomplished_score:accomplishedScore,
   };
 }
+export function renderScreen(screen){
+  return {
+    type:'RENDER_SCREEN',
+    screen:screen,
+  };
+}
+
+
 
 // Example of action created using the redux-thunk middleware for Redux
 export function objectiveAccomplishedThunk(objectiveId, accomplishedScore = null){

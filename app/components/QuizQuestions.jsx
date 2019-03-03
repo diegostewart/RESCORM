@@ -10,9 +10,10 @@ export default class QuizQuestions extends React.Component {
     super(props);
   }
 
-  onAnswerAmarillo(){
+
+  onAnswer(answer){
     let acierto = 0;
-    if(this.props.question.solucion === "amarillo"){
+    if(this.props.question.solucion === answer){
       acierto +=1;
     }
     let objective = this.props.objective;
@@ -21,71 +22,12 @@ export default class QuizQuestions extends React.Component {
     this.props.onNextQuestion();
   }
 
-    onAnswerVerde(){
-    let acierto = 0;
-    if(this.props.question.solucion === "verde"){
-      acierto +=1;
-    }
-    let objective = this.props.objective;
-    this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
-    this.setState({answered:true});
-    this.props.onNextQuestion();
-  }
-
-    onAnswerAzul(){
-    let acierto = 0;
-    if(this.props.question.solucion === "azul"){
-      acierto +=1;
-    }
-    let objective = this.props.objective;
-    this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
-    this.setState({answered:true});
-    this.props.onNextQuestion();
-  }
-  onAnswerMarron(){
-    let acierto = 0;
-    if(this.props.question.solucion === "marron"){
-      acierto +=1;
-    }
-    let objective = this.props.objective;
-    this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
-    this.setState({answered:true});
-    this.props.onNextQuestion();
-  }
-
-  onAnswerPuntoLimpio(){
-    let acierto = 0;
-    if(this.props.question.solucion === "punto limpio"){
-      acierto +=1;
-    }
-    let objective = this.props.objective;
-    this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
-    this.setState({answered:true});
-    this.props.onNextQuestion();
-  }
-
-  onAnswerSIGRES(){
-    let acierto = 0;
-    if(this.props.question.solucion === "sigres"){ // this.props.question.soluciones.indexOf("sigres") != -1; 
-      acierto +=1;
-    }
-    let objective = this.props.objective;
-    this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
-    this.setState({answered:true});
-    this.props.onNextQuestion();
-  }
-
-
-  onNextQuestion(){ // Creo que esto sobra. 
-    this.props.onNextQuestion();
-  }
   render(){
     return (
       <div className="question">
         <h1>{this.props.question.nombre}</h1>
         <img src={this.props.question.imagen}/>
-
-        <QuestionButtons I18n={this.props.I18n} difficulty={this.props.difficulty} onAnswerPuntoLimpio={this.onAnswerPuntoLimpio.bind(this)} onAnswerSIGRES={this.onAnswerSIGRES.bind(this)} onAnswerVerde={this.onAnswerVerde.bind(this)} onAnswerMarron={this.onAnswerMarron.bind(this)} onAnswerAzul={this.onAnswerAzul.bind(this)} onAnswerAmarillo={this.onAnswerAmarillo.bind(this)}  allow_finish={this.props.isLastQuestion}/>
+        <QuestionButtons I18n={this.props.I18n} question={this.props.question} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  allow_finish={this.props.isLastQuestion}/>
       </div>
     );
   }

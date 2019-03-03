@@ -5,68 +5,49 @@ import './../assets/scss/main.scss';
 import {GLOBAL_CONFIG} from '../config/config.js';
 import * as I18n from '../vendors/I18n.js';
 import * as SAMPLES from '../config/preguntas.js';
+import {renderScreen} from '../reducers/actions.jsx'
 
 import SCORM from './SCORM.jsx';
 import Header from './Header.jsx';
 import FinishScreen from './FinishScreen.jsx';
 import Quiz from './Quiz.jsx';
 import LevelChoice from './LevelChoice.jsx';
-import InfoScreen from './InfoScreen';
+import InfoScreen from './InfoScreen.jsx';
+
 
 export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
-    this.state = {
-      lvl: GLOBAL_CONFIG.lvl_selection // estoy hay que cambiarlo 
-    }
   }
 
-    onSelectLevel1(){
-     this.setState({ // dispatch action
-      lvl : 1
-     }) 
+    onSelectScreen(index,dif){
+      this.props.dispatch(renderScreen(index))
+      if(dif != 0){
+      this.props.user_profile.learner_preference.difficulty = dif;
+      }
   }
-  onSelectLevel2(){
-    this.setState({
-     lvl : 2
-    }) 
-  }
- onSelectLevel3(){
-    this.setState({
-      lvl : 3
-    }) 
-  } 
-infoButton(){
-  this.setState({
-   lvl : 4
-  }) 
-}
-backButton(){
-  this.setState({
-   lvl : 0
-  }) 
-}
 
   render(){
     let appHeader = "";
     let appContent = "";
+    let render = this.props.screen_render;
+
+
     
 
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
 
       //if(this.props.wait_for_user_profile !== true){ // Esta condición en realidad no es necesaria.
         
-          switch (this.state.lvl){
+          switch (render){
             case 0:
-            this.props.user_profile.learner_preference.difficulty = 0;
               appContent = (
-                <LevelChoice infoButton={this.infoButton.bind(this)} onSelectLevel1={this.onSelectLevel1.bind(this)} onSelectLevel2={this.onSelectLevel2.bind(this)} onSelectLevel3={this.onSelectLevel3.bind(this)}/>
+                <LevelChoice onSelectScreen={this.onSelectScreen.bind(this)} config={GLOBAL_CONFIG}/>
                 );
             break;
 
             case 1:
-            this.props.user_profile.learner_preference.difficulty = 1;
               appContent = (
                 <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.lista_preguntas} config={GLOBAL_CONFIG} I18n={I18n}/>
               );
@@ -77,39 +58,19 @@ backButton(){
             break;
 
             case 2:
-            this.props.user_profile.learner_preference.difficulty = 2;
               appContent = (
-                <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.lista_preguntas} config={GLOBAL_CONFIG} I18n={I18n}/>
-              );
-              appHeader = (
-                <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n}/>
-              );
-            break;
-
-            case 3:
-            this.props.user_profile.learner_preference.difficulty = 3;
-              appContent = (
-                <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.lista_preguntas} config={GLOBAL_CONFIG} I18n={I18n}/>
-              );
-              appHeader = (
-                <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n}/>
-              );
-            break;
-
-            case 4:
-              appContent = (
-                <InfoScreen backButton={this.backButton.bind(this)} />
+                <InfoScreen onSelectScreen={this.onSelectScreen.bind(this)} />
               );
             break;
 
             default:
             this.props.user_profile.learner_preference.difficulty = 0;
               appContent = (
-                <LevelChoice onSelectLevel1={this.onSelectLevel1.bind(this)} onSelectLevel2={this.onSelectLevel2.bind(this)} onSelectLevel3={this.onSelectLevel3.bind(this)}/>
+                <LevelChoice onSelectScreen={this.onSelectScreen.bind(this)} config={GLOBAL_CONFIG}/>
                 );
           }
         
-      //}ESTO SOBRA TAMBIEN
+      //} ESTE CORCHETE SOBRA TAMBIEN
     } else {
       appContent = (
         <FinishScreen dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.lista_preguntas} config={GLOBAL_CONFIG} I18n={I18n}/>

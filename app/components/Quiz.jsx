@@ -36,7 +36,7 @@ export default class Quiz extends React.Component {
         }
         questions.sort(function(a, b){ return a.dificultad - b.dificultad; }); // Ordenamos por orden de dificultad
         //Truncamos el array para solo tener el nivel de dificultad seleccionado:
-        questions = questions.slice(0,finalSlice); // inicioSlice es 0 para que al aumentar dificultades incluyamos las anteriores 
+        questions = questions.slice(inicioSlice,finalSlice); // inicioSlice es 0 para que al aumentar dificultades incluyamos las anteriores 
         questions = Utils.shuffleArray(questions);
         adaptive_sorted = true;
       }
@@ -94,7 +94,7 @@ export default class Quiz extends React.Component {
     // switch (currentQuestion.type){
     // case "multiple_choice":
     if(difficulty<4){
-      currentQuestionRender = (<QuizQuestions question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
+      currentQuestionRender = (<QuizQuestions quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
     }
     else{
       currentQuestionRender = "Question difficulty not supported";

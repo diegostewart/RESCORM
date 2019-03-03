@@ -6,7 +6,7 @@ export const INITIAL_STATE = {
     finished:false,
   },
   scorm:null,
-  init_level:0,
+  screen_render:0,
   user_profile:{
     id:undefined,
     name:"Unknown",

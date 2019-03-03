@@ -6,7 +6,7 @@ export default class InfoScreen extends React.Component {
 
     return (
       <div className="infoScreenWrapper">
-        <a onClick={this.props.backButton}><img src={"assets/images/Interfaz/back.png"} height="50" /></a>
+        <a onClick={this.props.onSelectScreen.bind(this,0,0)}><img src={"assets/images/Interfaz/back.png"} height="50" /></a>
         <div className="images">
 
         <img src={"assets/images/Interfaz/cuboAzul.png"} height="200"  />
