@@ -12,7 +12,7 @@ export let GLOBAL_CONFIG = {
       score_threshold:0.6,
     },
     n:undefined,
-    lvl_selection:7,
+    lvl_selection:0,
 
 
   },

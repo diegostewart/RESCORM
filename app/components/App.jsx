@@ -13,6 +13,7 @@ import FinishScreen from './FinishScreen.jsx';
 import Quiz from './Quiz.jsx';
 import LevelChoice from './LevelChoice.jsx';
 import InfoScreen from './InfoScreen.jsx';
+//import Button from 'react-bootstrap/Button';
 
 
 export class App extends React.Component {
@@ -32,9 +33,6 @@ export class App extends React.Component {
     let appHeader = "";
     let appContent = "";
     let render = this.props.screen_render;
-
-
-    
 
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
 
@@ -83,6 +81,8 @@ export class App extends React.Component {
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         {appHeader}
         {appContent}
+        {/* <Button variant="warning">Warning</Button> */}
+
       </div>
     );
   }
