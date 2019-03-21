@@ -89,7 +89,7 @@ export default class QuestionButtons extends React.Component {
       <div className="Wrapper">
         <div className="questionButtonsWrapper">
            {buttonQuestions}   
-           <Button variant="warning">Warning</Button>   
+           <Button variant="warning">Warning</Button>  
           </div>
         </div>
 
