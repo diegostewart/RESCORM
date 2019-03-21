@@ -1,5 +1,6 @@
 import React from 'react'; 
 import * as Utils from '../vendors/Utils.js';
+import Button from '../../node_modules/react-bootstrap/Button'; 
 
 
 export default class QuestionButtons extends React.Component {
@@ -84,62 +85,11 @@ export default class QuestionButtons extends React.Component {
         Utils.shuffleArray(buttonRender)
       );
 
-
-    // switch (this.props.difficulty){
-
-    //   case 1:
-    //   buttonQuestions = (
-    //     <div className="questionButtonsWrapper">
-    //       <button className="answerAmarillo" onClick={this.props.onAnswer.bind(this, "amarillo")} >Amarillo</button>
-    //       <button className="answerMarron" onClick={this.props.onAnswer.bind(this, "marron")} >Marrón</button>
-    //     </div>
-    //   );
-    //     break;
-
-    //   case 2:
-    //   buttonQuestions = (
-    //     <div className="questionButtonsWrapper">
-    //       <button className="answerAmarillo" onClick={this.props.onAnswer.bind(this, "amarillo")}>Amarillo</button>
-    //       <button className="answerVerde" onClick={this.props.onAnswer.bind(this, "verde")}>Verde</button>
-    //       <button className="answerAzul" onClick={this.props.onAnswer.bind(this, "azul")}>Azul</button>
-    //       <button className="answerMarron" onClick={this.props.onAnswer.bind(this, "marron")}>Marrón</button>
-    //     </div>
-    //     );
-    //    break;
-      
-    //    case 3:
-    //    buttonQuestions = (
-    //     <div className="questionButtonsWrapper">
-
-    //       <a onClick={this.props.onAnswer.bind(this, "amarillo")}><img src={"assets/images/Interfaz/cuboAmarillo.png"} height="100" /></a>
-    //       <a onClick={this.props.onAnswer.bind(this, "verde")}><img src={"assets/images/Interfaz/cuboVerde.png"} height="100" /></a>
-    //       <a onClick={this.props.onAnswer.bind(this, "azul")}><img src={"assets/images/Interfaz/cuboAzul.png"} height="100" /></a>
-    //       <a onClick={this.props.onAnswer.bind(this, "marron")}><img src={"assets/images/Interfaz/cuboMarron.png"} height="100" /></a>
-    //       <a onClick={this.props.onAnswer.bind(this, "puntolimpio")}><img src={"assets/images/Interfaz/puntoLimpio.png"} height="120" /></a>
-    //       <a onClick={this.props.onAnswer.bind(this, "sigre")}><img src={"assets/images/Interfaz/Sigre.png"} height="100" /></a>
-
-    //       {/* <button className="answerAmarillo" onClick={this.props.onAnswerAmarillo}>Amarillo</button>
-    //       <button className="answerVerde" onClick={this.props.onAnswerVerde}>Verde</button>
-    //       <button className="answerAzul" onClick={this.props.onAnswerAzul}>Azul</button>
-    //       <button className="answerMarron" onClick={this.props.onAnswerMarron}>Marrón</button>
-    //       <button className="answerPuntoLimpio" onClick={this.props.onAnswerPuntoLimpio}>Punto Limpio</button>
-    //       <button className="answerSIGRES" onClick={this.props.onAnswerSIGRES}>SIGRE</button> */}
-    //     </div>
-    //    );
-    //    break;
-
-    //    default:
-    //    buttonQuestions = (
-    //     <div className="questionButtonsWrapper">
-    //       <h1>There was a problem with the difficulty, try to reload the page.</h1>
-    //     </div>
-    //   );
-
-    // }
     return (
       <div className="Wrapper">
         <div className="questionButtonsWrapper">
-           {buttonQuestions}
+           {buttonQuestions}   
+           <Button variant="warning">Warning</Button>   
           </div>
         </div>
 
