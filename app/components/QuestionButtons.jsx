@@ -1,25 +1,31 @@
 import React from 'react'; 
 import * as Utils from '../vendors/Utils.js';
-import Button from '../../node_modules/react-bootstrap/Button'; 
+// import Button from '../../node_modules/react-bootstrap/Button'; 
 
 
 export default class QuestionButtons extends React.Component {
   constructor(props){
     super(props);
   }
-
-
-  
+    
   render(){
     let buttonQuestions ="";
+    let nextQuestion="";
+    let disableButton="";    
+
+    if(this.props.answered === true){        
+      nextQuestion = <a onClick={this.props.onNextQuestion.bind(this)}><img src={"assets/images/Interfaz/flecha.png"} height="75" /></a>
+      disableButton="disabled";
+      }
+
     
     let botones = [
-    <button key={"amarillo"} className="answerAmarillo" onClick={this.props.onAnswer.bind(this, "amarillo")}>Amarillo</button>,
-    <button key={"verde"} className="answerVerde" onClick={this.props.onAnswer.bind(this, "verde")}>Verde</button>,
-    <button key={"azul"} className="answerAzul" onClick={this.props.onAnswer.bind(this, "azul")}>Azul</button>,
-    <button key={"marron"} className="answerMarron" onClick={this.props.onAnswer.bind(this, "marron")}>Marrón</button>,
-    <button key={"puntolimpio"} className="answerPuntoLimpio" onClick={this.props.onAnswer.bind(this, "puntolimpio")}>Punto Limpio</button>,
-    <button key={"sigre"} className="answerSigre" onClick={this.props.onAnswer.bind(this, "sigre")}>Sigre</button>
+    <a onClick={this.props.onAnswer.bind(this, "amarillo")} class={disableButton}><img src={"assets/images/Interfaz/cuboAmarillo.png"} height="100" /></a>,
+    <a onClick={this.props.onAnswer.bind(this, "verde")} class={disableButton}><img src={"assets/images/Interfaz/cuboVerde.png"} height="100" /></a>,
+    <a onClick={this.props.onAnswer.bind(this, "azul")} class={disableButton}><img src={"assets/images/Interfaz/cuboAzul.png"} height="100" /></a>,
+    <a onClick={this.props.onAnswer.bind(this, "marron")} class={disableButton}><img src={"assets/images/Interfaz/cuboMarron.png"} height="100" /></a>,
+    <a onClick={this.props.onAnswer.bind(this, "puntolimpio")} class={disableButton}><img src={"assets/images/Interfaz/puntoLimpio.png"} height="100" /></a>,
+    <a onClick={this.props.onAnswer.bind(this, "sigre")} class={disableButton}><img src={"assets/images/Interfaz/Sigre.png"} height="100" /></a>,  
     ];
     
     let buttonRender = []; 
@@ -80,18 +86,22 @@ export default class QuestionButtons extends React.Component {
       break;
     }
 
-
       buttonQuestions = (
-        Utils.shuffleArray(buttonRender)
-      );
+        Utils.shuffleArray(buttonRender) 
+      );    
+
+      
 
     return (
       <div className="Wrapper">
         <div className="questionButtonsWrapper">
-           {buttonQuestions}   
-           <Button variant="warning">Warning</Button>  
-          </div>
+           {buttonQuestions}
+           {/* <Button variant="warning">Warning</Button>   */}
+         </div>
+        <div className="nextQuestion">
+         {nextQuestion}   
         </div>
+       </div>
 
 
     );

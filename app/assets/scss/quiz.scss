@@ -99,32 +99,33 @@ div.infoScreenWrapper div.images{
 
 div.infoScreenWrapper div.images img  {
   margin-right: 20px;
-  } 
+  }   
 
-
-
-
-  
-
-  div.infoButtonWrapper img, div.infoScreenWrapper a, div.infoScreenWrapper div.images img  {
+  div.infoButtonWrapper img, div.infoScreenWrapper a, div.infoScreenWrapper div.images img, div.nextQuestion a  {
     opacity: 0.7;
-    transition: all 0.3s;
-    
-    
-    } 
-
-div.infoButtonWrapper img:hover, div.infoScreenWrapper a:hover, div.infoScreenWrapper div.images img:hover {
-  opacity: 1;
-  cursor: pointer;
-  
+    transition: all 0.3s;        
   } 
 
+div.infoButtonWrapper img:hover, div.infoScreenWrapper a:hover, div.infoScreenWrapper div.images img:hover, div.nextQuestion a:hover {
+  opacity: 1;
+  cursor: pointer;  
+  } 
 
-div.infoButtonWrapper {
+  div.nextQuestion a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  a.disabled {
+    pointer-events: none;
+    cursor: default;
+ }
+
+div.infoButtonWrapper  {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  
+  justify-content: flex-end;  
   }  
 
 div.levelChoiceButton button.levelSelect1, div.levelChoiceButton button.levelSelect2, div.levelChoiceButton button.levelSelect3{ 
