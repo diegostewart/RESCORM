@@ -1,6 +1,6 @@
 import React from 'react'; 
 import * as Utils from '../vendors/Utils.js';
-// import Button from '../../node_modules/react-bootstrap/Button'; 
+import { Button, ButtonToolbar } from 'react-bootstrap';
 
 
 export default class QuestionButtons extends React.Component {
@@ -96,7 +96,6 @@ export default class QuestionButtons extends React.Component {
       <div className="Wrapper">
         <div className="questionButtonsWrapper">
            {buttonQuestions}
-           {/* <Button variant="warning">Warning</Button>   */}
          </div>
         <div className="nextQuestion">
          {nextQuestion}   
