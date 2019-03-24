@@ -163,7 +163,7 @@ export default class Quiz extends React.Component {
                 preguntasRestantes.push(verdeQuestion.shift());
               }
             }
-            if(pMArron > 0 && marronQuestion.length > 0){
+            if(pMarron > 0 && marronQuestion.length > 0){
               for(let p = 0; p<marronQuestion.length; p++){
                 preguntasRestantes.push(marronQuestion.shift());
               }
