@@ -13,8 +13,14 @@ export let GLOBAL_CONFIG = {
     },
     n:undefined,
     lvl_selection:0,
-
-
+    probability:{
+      amarillo:1,
+      marron:0,
+      azul:1,
+      verde:1,
+      puntolimpio:0,
+      sigre:0,
+    }
   },
   production:{
     debug:false,
@@ -29,6 +35,14 @@ export let GLOBAL_CONFIG = {
     },
     n:undefined,
     lvl_selection:0,
+    probability:{
+      amarillo:1,
+      marron:0,
+      azul:1,
+      verde:1,
+      puntolimpio:0,
+      sigre:0,
+    }
   },
 };
 

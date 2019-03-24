@@ -38,7 +38,7 @@ export const lista_preguntas = {
         {
         "nombre": "Botella de Vino-2",
         "solucion": "verde",
-        "opciones": ["verde","azul"],
+        "opciones": ["sigre","azul"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Botella_Vino.jpeg"
         
@@ -46,7 +46,7 @@ export const lista_preguntas = {
             {
         "nombre": "Papel de Periódico-2",
         "solucion": "azul",
-        "opciones": ["verde","azul"],
+        "opciones": ["verde","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Periodico.jpeg"
         

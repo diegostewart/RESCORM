@@ -9,13 +9,16 @@ export default class QuizQuestions extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      answered:false
+      answered:false,
+      correctAnswer:false,
+      pacopaco:2
     }
   }
 
   componentWillUpdate(prevProps, prevState){
     if(prevProps.question !== this.props.question){
       this.setState({answered:false});
+      this.setState({correctAnswer:false});
     }
   }
 
@@ -23,6 +26,7 @@ export default class QuizQuestions extends React.Component {
     let acierto = 0;
     if(this.props.question.solucion === answer){
       acierto +=1;
+      this.setState({correctAnswer:true});
     }
     let objective = this.props.objective;
     this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));

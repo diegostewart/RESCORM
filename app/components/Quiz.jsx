@@ -37,7 +37,11 @@ export default class Quiz extends React.Component {
         questions.sort(function(a, b){ return a.dificultad - b.dificultad; }); // Ordenamos por orden de dificultad
         //Truncamos el array para solo tener el nivel de dificultad seleccionado:
         questions = questions.slice(inicioSlice,finalSlice); // inicioSlice es 0 para que al aumentar dificultades incluyamos las anteriores 
+                
+        questions = this.setProbability(questions);
+
         questions = Utils.shuffleArray(questions);
+        
         adaptive_sorted = true;
       }
     }
@@ -69,6 +73,133 @@ export default class Quiz extends React.Component {
     }
     this.props.dispatch(addObjectives(objectives));
   }
+
+  setProbability(questions){
+    let newQuestions = [];
+
+    let azulQuestion = this.getQuestion(questions,"azul");
+    let amarilloQuestion = this.getQuestion(questions,"amarillo");
+    let verdeQuestion = this.getQuestion(questions,"verde");
+    let marronQuestion = this.getQuestion(questions,"marron");
+    let puntolimpioQuestion = this.getQuestion(questions,"puntolimpio");
+    let sigreQuestion = this.getQuestion(questions,"sigre");
+
+    //Parametros de configuracion
+    let azul = this.props.config.probability.azul;
+    let amarillo = this.props.config.probability.amarillo;
+    let verde = this.props.config.probability.verde;
+    let marron = this.props.config.probability.marron;
+    let puntolimpio = this.props.config.probability.puntolimpio;
+    let sigre = this.props.config.probability.sigre;
+
+    let total = azul+amarillo+verde+marron+puntolimpio+sigre;
+    
+
+    //Probabilidad asignada
+    let pAzul = azul/total;
+    let pAmarillo = amarillo/total;	
+    let pVerde = verde/total;
+    let pMarron = marron/total;
+    let pPuntoLimpio = puntolimpio/total;
+    let pSigre = sigre/total;
+
+
+    //Rango de cada probabilidad
+    let rangoAzul = 0 + pAzul;			
+    let rangoAmarillo = rangoAzul + pAmarillo;
+    let rangoVerde = rangoAmarillo + pVerde;
+    let rangoMarron = rangoVerde + pMarron;
+    let rangoPuntoLimpio = rangoMarron + pPuntoLimpio;
+    let rangoSigre = rangoPuntoLimpio + pSigre;
+
+    for(let i = 0; i < questions.length; i++){
+      let randomNumber = Math.random();
+
+        if ( randomNumber < rangoAzul && azulQuestion.length > 0){
+          // meto pregunta azul
+          newQuestions.push(azulQuestion.shift());
+        }
+        else if (randomNumber > rangoAzul && randomNumber < rangoAmarillo && amarilloQuestion.length > 0){
+          // meto pregunta amarilla
+          newQuestions.push(amarilloQuestion.shift());
+        }
+        else if (randomNumber > rangoAmarillo && randomNumber < rangoVerde && verdeQuestion.length > 0){
+          // meto pregunta Verde
+          newQuestions.push(verdeQuestion.shift());
+        }
+        else if (randomNumber > rangoVerde && randomNumber < rangoMarron && marronQuestion.length > 0){
+          // meto pregunta Marron
+          newQuestions.push(marronQuestion.shift());
+        }
+        else if (randomNumber > rangoMarron && randomNumber < rangoPuntoLimpio && puntolimpioQuestion.length > 0){
+          // meto pregunta PuntoLimpio
+          newQuestions.push(puntolimpioQuestion.shift());
+        }
+        else if (randomNumber > rangoPuntoLimpio && randomNumber < rangoSigre && sigreQuestion.length > 0){
+          // meto pregunta Sigre
+          newQuestions.push(sigreQuestion.shift());
+        }
+     }
+
+     if((typeof this.props.config.n === "number") && (this.props.config.n >= 1)){
+        let preguntasRestantes = [];
+        if(newQuestions.length >= this.props.config.n){
+          return newQuestions;
+        } 
+        else{
+            if(pAzul > 0 && azulQuestion.length > 0){
+              console.log(azulQuestion);
+              for(let p = 0; p<azulQuestion.length; p++){
+                preguntasRestantes.push(azulQuestion.shift());
+              }
+            }
+            if(pAmarillo > 0 && amarilloQuestion.length > 0){
+              for(let p = 0; p<amarilloQuestion.length; p++){
+                preguntasRestantes.push(amarilloQuestion.shift());
+              }
+            }
+            if(pVerde > 0 && verdeQuestion.length > 0){
+              for(let p = 0; p<verdeQuestion.length; p++){
+                preguntasRestantes.push(verdeQuestion.shift());
+              }
+            }
+            if(pMArron > 0 && marronQuestion.length > 0){
+              for(let p = 0; p<marronQuestion.length; p++){
+                preguntasRestantes.push(marronQuestion.shift());
+              }
+            }
+            if(pPuntoLimpio > 0 && puntolimpioQuestion.length > 0){
+              for(let p = 0; p<puntolimpioQuestion.length; p++){
+                preguntasRestantes.push(puntolimpioQuestion.shift());
+              }
+            }
+            if(pSigre > 0 && sigreQuestion.length > 0){
+              for(let p = 0; p<sigreQuestion.length; p++){
+                preguntasRestantes.push(sigreQuestion.shift());
+              }
+            }
+          for(let x = 0; x < preguntasRestantes.length; x++){
+            newQuestions.push(preguntasRestantes.shift());
+          }
+          return newQuestions
+        }
+     }
+     else{
+       return newQuestions
+     }
+  }
+  getQuestion(questions,solution){
+    let questionBySolution = [];
+
+    for (let i = 0; i < questions.length; i++) {
+      if(questions[i].solucion===solution){
+        questionBySolution.push(questions[i]);
+      }
+    }
+    return questionBySolution;
+  }
+  
+
   onNextQuestion(){
     let isLastQuestion = (this.state.current_question_index === this.state.quiz.questions.length);
     if(isLastQuestion === false){
