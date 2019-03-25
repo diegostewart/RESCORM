@@ -76,13 +76,10 @@ export class App extends React.Component {
 
     return (
 
-      <div className= "container" id="container">
+      <div className="contenedor">
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         {appHeader}
         {appContent}
-        
-        
-
       </div>
     );
   }

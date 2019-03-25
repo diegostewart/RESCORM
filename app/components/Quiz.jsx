@@ -148,7 +148,6 @@ export default class Quiz extends React.Component {
         } 
         else{
             if(pAzul > 0 && azulQuestion.length > 0){
-              console.log(azulQuestion);
               for(let p = 0; p<azulQuestion.length; p++){
                 preguntasRestantes.push(azulQuestion.shift());
               }
@@ -178,7 +177,7 @@ export default class Quiz extends React.Component {
                 preguntasRestantes.push(sigreQuestion.shift());
               }
             }
-          for(let x = 0; x < preguntasRestantes.length; x++){
+          for(let x = 0; x < preguntasRestantes.length+1; x++){
             newQuestions.push(preguntasRestantes.shift());
           }
           return newQuestions

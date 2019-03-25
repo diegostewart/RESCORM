@@ -1,6 +1,5 @@
 import React from 'react'; 
 import * as Utils from '../vendors/Utils.js';
-import { Button, ButtonToolbar } from 'react-bootstrap';
 
 
 export default class QuestionButtons extends React.Component {
