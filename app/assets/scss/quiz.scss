@@ -80,23 +80,14 @@ div.question div.questionButtonsWrapper button.answerAmarillo,div.question div.q
   cursor: pointer;
 }
 
-div.infoScreenWrapper div.images{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+  
 
-div.infoScreenWrapper div.images img  {
-  margin-right: 20px;
-}   
-
-div.infoScreenWrapper a, div.infoScreenWrapper div.images img, div.nextQuestion a  {
+div.nextQuestion a  {
   opacity: 0.7;
   transition: all 0.3s;        
 } 
 
-div.infoScreenWrapper a:hover, div.infoScreenWrapper div.images img:hover, div.nextQuestion a:hover {
+div.nextQuestion a:hover {
   opacity: 1;
   cursor: pointer;  
 } 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './../assets/scss/level_choice.scss';
 
-import {Row,Col, Container,ProgressBar} from 'react-bootstrap';
+import {Row,Col, Container} from 'react-bootstrap';
 
 export default class LevelChoice extends React.Component {
 
