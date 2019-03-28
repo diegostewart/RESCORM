@@ -224,7 +224,7 @@ export default class Quiz extends React.Component {
     // switch (currentQuestion.type){
     // case "multiple_choice":
     if(difficulty<4){
-      currentQuestionRender = (<QuizQuestions quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective} onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
+      currentQuestionRender = (<QuizQuestions quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective}  onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
     }
     else{
       currentQuestionRender = "Question difficulty not supported";

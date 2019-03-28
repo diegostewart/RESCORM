@@ -11,7 +11,7 @@ export default class QuizQuestions extends React.Component {
     this.state = {
       answered:false,
       correctAnswer:false,
-      pacopaco:2
+      buttonPressed:""
     }
   }
 
@@ -31,6 +31,7 @@ export default class QuizQuestions extends React.Component {
     let objective = this.props.objective;
     this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
     this.setState({answered:true});
+    this.setState({buttonPressed:answer});
     //this.props.onNextQuestion();
   }
 
@@ -39,7 +40,7 @@ export default class QuizQuestions extends React.Component {
       <div className="question">
         <h1>{this.props.question.nombre}</h1>
         <img src={this.props.question.imagen}/>
-        <QuestionButtons I18n={this.props.I18n} question={this.props.question}  answered={this.state.answered} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  onNextQuestion={this.props.onNextQuestion.bind(this)} allow_finish={this.props.isLastQuestion}/>
+        <QuestionButtons I18n={this.props.I18n} question={this.props.question} correctAnswer={this.state.correctAnswer} buttonPressed={this.state.buttonPressed} answered={this.state.answered} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  onNextQuestion={this.props.onNextQuestion.bind(this)} allow_finish={this.props.isLastQuestion}/>
       </div>
     );
   }

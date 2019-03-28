@@ -13,6 +13,7 @@ import FinishScreen from './FinishScreen.jsx';
 import Quiz from './Quiz.jsx';
 import LevelChoice from './LevelChoice.jsx';
 import InfoScreen from './InfoScreen.jsx';
+import InfoAzul from './InfoScreens/InfoAzul.jsx';
 
 
 export class App extends React.Component {
@@ -57,6 +58,12 @@ export class App extends React.Component {
             case 2:
               appContent = (
                 <InfoScreen onSelectScreen={this.onSelectScreen.bind(this)} />
+              );
+            break;
+
+            case 3:
+              appContent = (
+                <InfoAzul onSelectScreen={this.onSelectScreen.bind(this)} />
               );
             break;
 

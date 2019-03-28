@@ -8,6 +8,7 @@ export default class Header extends React.Component {
   }
   render(){
     let loggedText;
+    let headerRender;
     let trackingTexts = [];
     let porcentajeTruncado = Math.trunc(this.props.tracking.progress_measure * 100);
 
@@ -39,13 +40,21 @@ export default class Header extends React.Component {
     let trackingEls = trackingTexts.map(function(text, index){
       return <span key={index}>{text}</span>;
     });
+    headerRender =(
+      <h3>
+      <span className="puntuacion" >{"Puntuación: "+(this.props.tracking.score * 100).toFixed(1) + "%"} </span>
+      <span className="dificultad" >{"Dificultad: " + this.props.user_profile.learner_preference.difficulty} </span>
+      </h3>
+    );
 
     return (
       <div className="header_wrapper">
-        <a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/react_logo.png"/></a>
+        {/* <a target="_blank" href="https://github.com/agordillo/RESCORM"><img src="assets/images/react_logo.png"/></a>
         <h1 id="heading">{this.props.I18n.getTrans("i.title")}</h1>
-        <p id="tracking">{trackingEls}</p>
-        {<ProgressBar  now={porcentajeTruncado} label={`${porcentajeTruncado}%`} />}
+        <p id="tracking">{trackingEls}</p> */}
+        <h1 id="heading">QUIZ DE RECICLAJE</h1>
+        {headerRender}
+        <ProgressBar className="progressBar"  now={porcentajeTruncado} label={`${porcentajeTruncado}%`}/>  
         {loggedEl} 
       </div>
     );

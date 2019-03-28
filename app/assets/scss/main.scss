@@ -1,5 +1,7 @@
 body {
-  background-color: rgba(13, 114, 139, 0.425);
+ // background-color: rgba(19, 149, 182, 0.425);
+  background-image: linear-gradient(to bottom right, rgba(32, 115, 136, 0.425),
+   rgba(3, 74, 94, 0.993));
 }
 
 div.header_wrapper img {
@@ -10,8 +12,11 @@ div.header_wrapper img {
 }
 
 #heading {
-  font-size: 30px;
+  font-size: 40px;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
   margin: 8px;
+  text-align: center;
 }
 
 #tracking{
@@ -28,4 +33,19 @@ div.header_wrapper img {
   font-size: 18px;
   color: gray;
   margin: 8px;
+}
+
+span.puntuacion{
+  //float: left;
+  margin: 10px;
+  text-align: center;
+}
+span.dificultad{
+  float: right;
+  margin-inline-end: 10px;
+}
+
+.progress.progressBar{
+  // margin-left: 10%;
+  // margin-right: 10%;
 }

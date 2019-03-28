@@ -51,7 +51,7 @@ export default class InfoScreen extends React.Component {
               <Carousel.Caption>
                 <h3>Cubo Azul</h3>
                 <p>Envases de papel y carton</p>
-                <Button> Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0)} > Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
 
