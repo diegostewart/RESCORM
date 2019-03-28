@@ -98,16 +98,53 @@ div.nextQuestion a{
   align-items:center;
 }
 
-a.disabled {
+div.question div.questionButtonsWrapper a.fallo{
+  opacity: 0.6;
   pointer-events: none;
   cursor: default;
 }
 
+div.question div.questionButtonsWrapper a.nothing{
+  opacity: 0.1;
+  pointer-events: none;
+  cursor: default;
+}
 
+div.question div.questionButtonsWrapper a.acierto{
+  opacity: 1;
+  pointer-events: none;
+  cursor: default;
+}
 
-
-
-
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0.6; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0.6; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0.6; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0.6; }
+  100% { opacity:1; }
+}
+div.question div.questionButtonsWrapper a.correcta {
+  -webkit-animation: flickerAnimation 1s infinite;
+  -moz-animation: flickerAnimation 1s infinite;
+  -o-animation: flickerAnimation 1s infinite;
+  animation: flickerAnimation 0.5s 5;
+  opacity:1;
+  pointer-events: none;
+  cursor: default;
+}
 
 html, body, #root{
   height: 100%;
@@ -115,13 +152,12 @@ html, body, #root{
   margin: 0;
   padding: 0;
 }
+
 div.contenedor{
   height:100%;
   margin: 0;
   padding:0;
 }
-
-
 
 div.question div.questionButtonsWrapper a {
   margin-right: 20px;
