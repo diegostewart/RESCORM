@@ -1,0 +1,47 @@
+.back{
+    opacity: 0.7;
+    transition: all 0.3s;        
+} 
+
+.back:hover{
+    opacity: 1;
+    cursor: pointer;  
+} 
+
+.card {
+    //margin: auto;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom: auto;
+    border-radius: 20px;
+    
+}
+.tarjeta{
+    height: 360px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.boton {
+    margin-left: 30%;
+    margin-right: 26%;
+    
+}
+
+img.foto{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right:auto;
+    height: 120px;
+    width: 120px;
+}
+
+.infoDisplay{
+    margin-top: 2%;   
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+}
