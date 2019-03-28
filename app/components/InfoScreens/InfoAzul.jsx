@@ -14,8 +14,6 @@ export default class InfoAzul extends React.Component {
 
   }
  
-  
-
     getRandomText(seccion){
       let info = INFORMACION.info;
       let index = Math.floor(Math.random() * info.contenedor[seccion].length);
