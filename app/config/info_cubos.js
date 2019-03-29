@@ -1,13 +1,13 @@
 export const info = {
   "contenedor":{
       
-      "depositar_azul":[
+      "depositar_Azul":[
         {
           "texto":"Este contenedor suele ser fácil de distinguir y de usar, ya que está destinado para papel y cartón exclusivamente. Un pequeño truco, es doblar y comprimir los envases en vez de arrugarlos, para ahorrar espacio en el cubo y aumentar su capacidad. Lo que debe meterse en el contenedor azul son envases de alimentación, calzado, productos congelados, papel para envolver, papel de uso diario… "
         }, 
       ],
 
-      "error_azul":[
+      "error_Azul":[
         {
           "texto":"El error más común es con el Brik. Al pensar que es cartón, se piensa que este contenedor es su destino, pero no es así. El Brik va siempre al contenedor amarillo, ya que está compuesto por cartón, plástico y aluminio."
         }, {
@@ -17,7 +17,7 @@ export const info = {
         }
       ],
 
-      "reciclar_azul":[
+      "reciclar_Azul":[
         {
           "texto":"Estos envases son trasladados a plantas de recuperación donde se limpian (plásticos, metales…), se clasifican según los tipos de papel y se prensan en balas de dimensiones y peso estandarizados. Una vez listos, se transportan hasta una fábrica de papel, donde se transforman en bobinas de papel nuevo, que se convertirán en cajas, de zapatos, cereales, folios, periódicos…"
         }, {
@@ -33,7 +33,7 @@ export const info = {
         },
       ],
 
-      "curiosidad_azul":[
+      "curiosidad_Azul":[
         {
           "texto":"¿Sabías que 8 cajas de cereales pueden hacer un libro?"
         }, {
@@ -47,7 +47,7 @@ export const info = {
         }
       ],
     
-      "depositar_amarillo":[
+      "depositar_Amarillo":[
         {
           "texto":"Texto primero"
         }, {

@@ -13,19 +13,27 @@ import FinishScreen from './FinishScreen.jsx';
 import Quiz from './Quiz.jsx';
 import LevelChoice from './LevelChoice.jsx';
 import InfoScreen from './InfoScreen.jsx';
-import InfoAzul from './InfoScreens/InfoAzul.jsx';
+import InfoScreenCards from './InfoScreenCards.jsx';
 
 
 export class App extends React.Component {
   constructor(props){
     super(props);
     I18n.init();
+
+    this.state = {
+      tarjetaSeleccionada:""
+    };
+
   }
 
-    onSelectScreen(index,dif){
+    onSelectScreen(index,dif,infoCardScreen){
       this.props.dispatch(renderScreen(index))
       if(dif != 0){
       this.props.user_profile.learner_preference.difficulty = dif;
+      }
+      if(typeof infoCardScreen === "string"){
+        this.setState({tarjetaSeleccionada:infoCardScreen});
       }
   }
 
@@ -63,7 +71,7 @@ export class App extends React.Component {
 
             case 3:
               appContent = (
-                <InfoAzul onSelectScreen={this.onSelectScreen.bind(this)} />
+                <InfoScreenCards onSelectScreen={this.onSelectScreen.bind(this)} cuboSeleccionado={this.state.tarjetaSeleccionada}/>
               );
             break;
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import './../../assets/scss/info_screen_azul.scss';
-import * as INFORMACION from '../../config/info_cubos.js';
+import './../assets/scss/info_screen_cards.scss';
+import * as INFORMACION from '../config/info_cubos.js';
 import {Card,Button,Row} from 'react-bootstrap';
 
-export default class InfoAzul extends React.Component {
+export default class InfoScreenCards extends React.Component {
 
   constructor(props){
     super(props);
@@ -30,23 +30,30 @@ export default class InfoAzul extends React.Component {
         this.setState({text_display:info.contenedor[seccion][this.state.cuenta].texto})
       }
     }
-
+  
     
   render(){
+    let cubo = this.props.cuboSeleccionado;
+    let imgCubo = "assets/images/Interfaz/cubo" + cubo + ".png";
+    let depositar = "depositar_" + cubo;
+    let error = "error_" + cubo;
+    let reciclar = "reciclar_" + cubo;
+    let curiosidad = "curiosidad_" + cubo;
+
     return (
-      <div className="InfoAzulWrapper">
+      <div className="InfoScreenCardsWrapper">
         <a className="back" onClick={this.props.onSelectScreen.bind(this,2,0)}><img src={"assets/images/Interfaz/back.png"} height="50" /></a>
       
         <Row>
           <Card className="tarjeta" style={{ width: '18rem' }}>
-            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/cuboAzul.png" />
+            <Card.Img className="foto" variant="top" src={imgCubo} />
             <Card.Body>
               <Card.Title className="titulo" >¿Qué hay que meter?</Card.Title>
               <Card.Text>
                 Podrás aprender que productos, alimentos o envases están destinados a 
                 ser depositados en este contenedor.
               </Card.Text>
-              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,"depositar_azul")}>Infórmate</Button>
+              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,depositar)}>Infórmate</Button>
             </Card.Body>
           </Card>
 
@@ -58,7 +65,7 @@ export default class InfoAzul extends React.Component {
                 Podrás aprender los errores más comunes que comete la gente
                 a la hora de tirar productos en este contenedor.
               </Card.Text>
-              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,"error_azul")}>Infórmate</Button>
+              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,error)}>Infórmate</Button>
             </Card.Body>
           </Card>
 
@@ -70,7 +77,7 @@ export default class InfoAzul extends React.Component {
                 Podrás aprender el proceso de reciclaje que se lleva a cabo con los productos
                 que se tiran en este contenedor.
               </Card.Text>
-              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,"reciclar_azul")}>Infórmate</Button>
+              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,reciclar)}>Infórmate</Button>
             </Card.Body>
           </Card>
 
@@ -81,7 +88,7 @@ export default class InfoAzul extends React.Component {
               <Card.Text>
                 Podrás aprender algunas curiosidades sobre este contenedor y sus productos reciclados.
               </Card.Text>
-              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,"curiosidad_azul")}>Infórmate</Button>
+              <Button className="boton" variant="primary" onClick={this.getRandomText.bind(this,curiosidad)}>Infórmate</Button>
             </Card.Body>
           </Card>
         </Row>

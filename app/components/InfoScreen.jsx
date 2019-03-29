@@ -51,7 +51,7 @@ export default class InfoScreen extends React.Component {
               <Carousel.Caption>
                 <h3>Cubo Azul</h3>
                 <p>Envases de papel y carton</p>
-                <Button onClick={this.props.onSelectScreen.bind(this,3,0)} > Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0,"Azul")} > Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
 
@@ -65,7 +65,7 @@ export default class InfoScreen extends React.Component {
               <Carousel.Caption>
                 <h3>Cubo Amarillo</h3>
                 <p>Envases de plástico, latas y bricks</p>
-                <Button> Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0,"Amarillo")} > Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
 
@@ -79,7 +79,7 @@ export default class InfoScreen extends React.Component {
               <Carousel.Caption>
                 <h3>Cubo Verde</h3>
                 <p>Botellas y recipientes de Vidrio</p>
-                <Button> Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0,"Verde")} > Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
 
@@ -93,14 +93,14 @@ export default class InfoScreen extends React.Component {
               <Carousel.Caption>
                 <h3>Cubo Marrón</h3>
                 <p>Restos Orgánicos</p>
-                <Button> Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0,"Marron")} > Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
 
              <Carousel.Item>
               <img
                 //className="d-block h-100" // className="d-block w-100"
-                src="assets/images/Interfaz/puntoLimpio.png"
+                src="assets/images/Interfaz/cuboPuntoLimpio.png"
                 alt="Quinta slide"
                 hspace="50"
               />
@@ -108,21 +108,21 @@ export default class InfoScreen extends React.Component {
                 <h3>Punto Limpio</h3>
                 <p>Residuos que no se pueden </p>
                 <p> tirar a contenedores convencionales</p>
-                <Button> Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0,"PuntoLimpio")}> Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
 
              <Carousel.Item>
               <img
                 //className="d-block h-100" // className="d-block w-100"
-                src="assets/images/Interfaz/Sigre.png"
+                src="assets/images/Interfaz/cuboSigre.png"
                 alt="Sexta slide"
                 hspace="50"
               />
               <Carousel.Caption>
                 <h3>Sigre</h3>
                 <p>Envases y restos de medicamentos</p>
-                <Button> Aprender más </Button>
+                <Button onClick={this.props.onSelectScreen.bind(this,3,0,"Sigre")} > Aprender más </Button>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
