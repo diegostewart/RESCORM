@@ -9,20 +9,30 @@ export default class InfoAzul extends React.Component {
     super(props);
 
      this.state = {
+      cuenta:0,
+      boton:"",
       text_display:"Pulsa cualquier botón para mostrar la información correspondiente a ese panel"
     };
 
   }
  
     getRandomText(seccion){
-      let info = INFORMACION.info;
-      let index = Math.floor(Math.random() * info.contenedor[seccion].length);
-      this.setState({text_display:info.contenedor[seccion][index].texto}) 
+      let info = INFORMACION.info; 
+      // Devuelven un indice aleatorio de la lista.
+      // let index = Math.floor(Math.random() * info.contenedor[seccion].length);
+      let _cuenta = this.state.cuenta;
+      if(this.state.cuenta < info.contenedor[seccion].length-1 && this.state.boton == seccion){
+        this.setState({cuenta:_cuenta+1});
+        this.setState({text_display:info.contenedor[seccion][this.state.cuenta].texto})
+      }else{
+        this.setState({cuenta:0});
+        this.setState({boton:seccion});
+        this.setState({text_display:info.contenedor[seccion][this.state.cuenta].texto})
+      }
     }
 
     
   render(){
-
     return (
       <div className="InfoAzulWrapper">
         <a className="back" onClick={this.props.onSelectScreen.bind(this,2,0)}><img src={"assets/images/Interfaz/back.png"} height="50" /></a>
