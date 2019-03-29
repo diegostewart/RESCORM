@@ -137,9 +137,9 @@ div.question div.questionButtonsWrapper a.acierto{
   100% { opacity:1; }
 }
 div.question div.questionButtonsWrapper a.correcta {
-  -webkit-animation: flickerAnimation 1s infinite;
-  -moz-animation: flickerAnimation 1s infinite;
-  -o-animation: flickerAnimation 1s infinite;
+  -webkit-animation: flickerAnimation 0.5s 5;
+  -moz-animation: flickerAnimation 0.5s 5;
+  -o-animation: flickerAnimation 0.5s 5;
   animation: flickerAnimation 0.5s 5;
   opacity:1;
   pointer-events: none;

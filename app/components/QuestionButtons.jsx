@@ -28,8 +28,10 @@ export default class QuestionButtons extends React.Component {
     let nextQuestionButton="";
     let disableButton={amarillo:"",verde:"",azul:"",marron:"",puntolimpio:"",sigre:""}; 
     
-    if(this.props.answered === true){        
+    if(this.props.answered === true){   
+      if(this.props.renderNext === true){     
       nextQuestionButton = <a onClick={this.props.onNextQuestion.bind(this)}><img src={"assets/images/Interfaz/flecha.png"} height="75" /></a>
+      }
       this.setListDisabled(disableButton);
       let bpress = this.props.buttonPressed;
       if(this.props.correctAnswer){
