@@ -2,7 +2,11 @@ body {
  // background-color: rgba(19, 149, 182, 0.425);
   background-image: linear-gradient(to bottom right, rgba(32, 115, 136, 0.425),
    rgba(3, 74, 94, 0.993));
+   overflow: hidden;
 }
+  #root{
+    overflow: auto;
+  }
 
 div.header_wrapper img {
   width: 71px;
