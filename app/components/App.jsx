@@ -43,13 +43,11 @@ export class App extends React.Component {
     let render = this.props.screen_render;
 
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
-
-      //if(this.props.wait_for_user_profile !== true){ // Esta condición en realidad no es necesaria.
         
           switch (render){
             case 0:
               appContent = (
-                <LevelChoice onSelectScreen={this.onSelectScreen.bind(this)} config={GLOBAL_CONFIG}/>
+                <LevelChoice onSelectScreen={this.onSelectScreen.bind(this)} dispatch={this.props.dispatch} user_profile={this.props.user_profile} config={GLOBAL_CONFIG}/>
                 );
             break;
 
@@ -80,9 +78,7 @@ export class App extends React.Component {
               appContent = (
                 <LevelChoice onSelectScreen={this.onSelectScreen.bind(this)} config={GLOBAL_CONFIG}/>
                 );
-          }
-        
-      //} ESTE CORCHETE SOBRA TAMBIEN
+          }        
     } else {
       appContent = (
         <FinishScreen dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.lista_preguntas} config={GLOBAL_CONFIG} I18n={I18n}/>

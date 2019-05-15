@@ -52,19 +52,18 @@ export default class QuizQuestions extends React.Component {
       this.setState({correctAnswer:true});
       this.setState({renderNext:true})
       if(this.props.question.feedback.positivo != "" && this.props.question.feedback.positivo != undefined){
-        console.log(this.props.question.feedback.positivo);
         this.setState({feedback:this.props.question.feedback.positivo});
         this.handleShow();
 
       }
     }else{    // Ha fallado la pregunta
-      sleep(2500).then(() => { 
+      // sleep(2500).then(() => { 
         this.setState({renderNext:true})
         if(this.props.question.feedback.negativo != "" && this.props.question.feedback.positivo != undefined){
         this.setState({feedback:this.props.question.feedback.negativo})
         this.handleShow();
         }
-      })
+      // })
     }
 
     let objective = this.props.objective;

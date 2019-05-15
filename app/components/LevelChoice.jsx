@@ -1,5 +1,6 @@
 import React from 'react';
 import './../assets/scss/level_choice.scss';
+import {renderScreen} from '../reducers/actions.jsx'
 
 import {Row,Col, Container} from 'react-bootstrap';
 
@@ -11,8 +12,8 @@ export default class LevelChoice extends React.Component {
 
     if(nivel>=0 && nivel <4){
       if(nivel!=0){
-      this.props.dispatch(renderScreen(1))
-      this.props.user_profile.learner_preference.difficulty = nivel;
+        this.props.dispatch(renderScreen(1))
+        this.props.user_profile.learner_preference.difficulty = nivel;
       }
     }
     else{

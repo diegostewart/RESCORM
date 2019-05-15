@@ -21,13 +21,16 @@ export default class InfoScreenCards extends React.Component {
       // Devuelven un indice aleatorio de la lista.
       // let index = Math.floor(Math.random() * info.contenedor[seccion].length);
       let _cuenta = this.state.cuenta;
-      if(this.state.cuenta < info.contenedor[seccion].length-1 && this.state.boton == seccion){
-        this.setState({cuenta:_cuenta+1});
-        this.setState({text_display:info.contenedor[seccion][this.state.cuenta].texto})
+
+      if(this.state.boton === seccion){
+        _cuenta = _cuenta+1;
+        if(_cuenta === info.contenedor[seccion].length){
+          _cuenta = 0;
+        }
+        this.setState({cuenta:_cuenta,text_display:info.contenedor[seccion][_cuenta].texto});
       }else{
-        this.setState({cuenta:0});
-        this.setState({boton:seccion});
-        this.setState({text_display:info.contenedor[seccion][this.state.cuenta].texto})
+        _cuenta = 0;
+        this.setState({boton:seccion,cuenta: _cuenta, text_display:info.contenedor[seccion][_cuenta].texto});
       }
     }
   
@@ -58,7 +61,7 @@ export default class InfoScreenCards extends React.Component {
           </Card>
 
           <Card className="tarjeta" style={{ width: '18rem' }}>
-            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/error.jpg" />
+            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/error.png" />
             <Card.Body>
               <Card.Title className="titulo" >Errores más comunes</Card.Title>
               <Card.Text>
@@ -70,7 +73,7 @@ export default class InfoScreenCards extends React.Component {
           </Card>
 
           <Card className="tarjeta" style={{ width: '18rem' }}>
-            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/reciclaje.jpg" />
+            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/reciclaje.png" />
             <Card.Body>
               <Card.Title className="titulo" >Proceso de reciclaje</Card.Title>
               <Card.Text>
@@ -82,7 +85,7 @@ export default class InfoScreenCards extends React.Component {
           </Card>
 
           <Card className="tarjeta" style={{ width: '18rem' }}>
-            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/curiosidad.jpg" />
+            <Card.Img className="foto" variant="top" src="assets/images/Interfaz/curiosidad.png" />
             <Card.Body>
               <Card.Title className="titulo" >Curiosidades</Card.Title>
               <Card.Text>

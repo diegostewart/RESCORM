@@ -187,6 +187,7 @@ export default class Quiz extends React.Component {
        return newQuestions
      }
   }
+
   getQuestion(questions,solution){
     let questionBySolution = [];
 
@@ -197,7 +198,6 @@ export default class Quiz extends React.Component {
     }
     return questionBySolution;
   }
-  
 
   onNextQuestion(){
     let isLastQuestion = (this.state.current_question_index === this.state.quiz.questions.length);
@@ -207,10 +207,12 @@ export default class Quiz extends React.Component {
       this.props.dispatch(finishApp(true));
     }
   }
+
   onResetQuiz(){
     this.setState({current_question_index:1});
     this.props.dispatch(resetObjectives());
   }
+
   render(){
     let currentQuestion = this.state.quiz.questions[this.state.current_question_index - 1];
     let isLastQuestion = (this.state.current_question_index === this.state.quiz.questions.length);
@@ -221,18 +223,12 @@ export default class Quiz extends React.Component {
     let onResetQuiz = this.onResetQuiz.bind(this);
     let currentQuestionRender = "";
 
-    // switch (currentQuestion.type){
-    // case "multiple_choice":
     if(difficulty<4){
       currentQuestionRender = (<QuizQuestions quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective}  onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
     }
     else{
       currentQuestionRender = "Question difficulty not supported";
     }
-      //   break;
-    // default:
-    //   currentQuestionRender = "Question type not supported";
-    // }
 
     return (
       <div className="quiz">
