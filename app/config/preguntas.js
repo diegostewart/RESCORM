@@ -6,7 +6,7 @@ export const lista_preguntas = {
       {
         "nombre": "Botella de Plastico",
         "solucion": "amarillo",
-        "opciones": [], //Estos serían los botones que se renederizan.
+        "opciones": ["verde", "amarillo"], //Estos serían los botones que se renederizan.
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Botella_Agua.jpg",
         "feedback":{
@@ -17,7 +17,7 @@ export const lista_preguntas = {
         {
         "nombre": "Botella de Vino",
         "solucion": "verde",
-        "opciones": [],
+        "opciones": ["verde","amarillo"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Botella_Vino.jpeg",
         "feedback":{
@@ -28,7 +28,7 @@ export const lista_preguntas = {
             {
         "nombre": "Papel de Periódico",
         "solucion": "azul",
-        "opciones": [],
+        "opciones": ["verde", "amarillo","azul"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Periodico.jpeg",
         "feedback":{

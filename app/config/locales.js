@@ -7,7 +7,7 @@ export let LOCALES = {
     "i.finish_screen_title_wpm":"The content has ended. You may close this window. Your final progress was #{progress_measure}%.",
     "i.finish_screen_title_ws":"The content has ended. You may close this window. Your final score was #{score}%.",
     "i.finish_screen_title_simple":"The content has ended. You may close this window.",
-    "i.quiz_header_title":"Question: #{current}/#{total}",
+    "i.quiz_header_title":"Objeto #{current} de #{total}",
     "i.logged_as":"Logged as",
     "i.next":"Next",
     "i.progress_measure":"Progress Measure",
