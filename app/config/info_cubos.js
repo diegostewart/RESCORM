@@ -235,51 +235,35 @@ export const info = {
 
       "depositar_Sigre":[
         {
-          "texto":""
-        }, {
-          "texto":""
+          "texto":"En este contenedor debemos depositar los Medicamentos caducados o que por cualquier razón ya no necesitemos, además de cajas de medicamentos y envases vacíos o con restos."
         }
       ],
 
       "error_Sigre":[
         {
-          "texto":""
+          "texto":"Los errores más comunes a la hora de tirar objetos al contenedor sigre pueden ser objetos relacionados con la medicina. Como por ejemplo las agujas termómetros o gasas, o también radiografías, pilas o incluso productos químicos "
         }
       ],
 
       "reciclar_Sigre":[
         {
-          "texto":""
+          "texto":"Todos los productos recogidos en las farmacias en los contenedores Sigre, son destinados a la misma planta. Los distintos medicamentos se separan en tres tipos: Materiales de los envases, Residuos de materiales no peligrosos y Medicamentos peligrosos "
         }, {
-          "texto":""
+          "texto":"Los materiales de envases con papel, cartón, plástico o vidrio se envían a empresas recicladoras"
         }, {
-          "texto":""
+          "texto":"Los residuos de medicamentos no peligrosos se destinan a producir energía eléctrica mediante valorización energética"
         }, {
-          "texto":""
-        }, {
-          "texto":""
-        }, {
-          "texto":""
-        }, {
-          "texto":""
-        }, {
-          "texto":""
+          "texto":"Por último los medicamentos peligrosos se entregan a gestores especializados para su eliminación"
         }
       ],
 
       "curiosidad_Sigre":[
         {
-          "texto":""
+          "texto":"La Planta de Tratamiento de Envases y Residuos de Medicamentos es una instalación innovadora y pionera, ubicada en Tudela de Duero (Valladolid), a la que llegan todos los residuos depositados en los Puntos SIGRE de las farmacias de España."
         }, {
-          "texto":""
+          "texto":"Esta Planta destaca por su alto grado de automatización e incorpora distintas innovaciones tecnológicas  en sus procesos de selección y clasificación. Todo ello, ha permitido una significativa reducción de costes y mejorar de forma sustancial los porcentajes de reciclado de los envases de los medicamentos (cartón, plástico, vidrio, etc.)."
         }, {
-          "texto":""
-        }, {
-          "texto":""
-        }, {
-          "texto":""
-        }, {
-          "texto":""
+          "texto":"Esta Planta es una solución competitiva, eficiente y eficaz para el cuidado del medio ambiente, que ha situado a España a la vanguardia del reciclado de envases y residuos de medicamentos a nivel mundial y que está siendo estudiada por diferentes países."
         }
       ],
     }
