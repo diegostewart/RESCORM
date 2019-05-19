@@ -9,11 +9,11 @@ export default class InfoScreenCards extends React.Component {
     super(props);
 
      this.state = {
+      infoSiguiente:"hidden",
       cuenta:0,
       boton:"",
       text_display:"Pulsa cualquier botón para mostrar la información correspondiente a ese panel"
-    };
-
+    }
   }
  
     getRandomText(seccion){
@@ -21,19 +21,24 @@ export default class InfoScreenCards extends React.Component {
       // Devuelven un indice aleatorio de la lista.
       // let index = Math.floor(Math.random() * info.contenedor[seccion].length);
       let _cuenta = this.state.cuenta;
+      if(this.state.infoSiguiente === "hidden"){
+        this.setState({infoSiguiente:"info"})
+      }
+      
 
       if(this.state.boton === seccion){
         _cuenta = _cuenta+1;
         if(_cuenta === info.contenedor[seccion].length){
           _cuenta = 0;
         }
-        this.setState({cuenta:_cuenta,text_display:info.contenedor[seccion][_cuenta].texto});
+        let contador = _cuenta + 1 + "/" + info.contenedor[seccion].length + " - " 
+        this.setState({cuenta:_cuenta,text_display:contador + " " + info.contenedor[seccion][_cuenta].texto});
       }else{
         _cuenta = 0;
-        this.setState({boton:seccion,cuenta: _cuenta, text_display:info.contenedor[seccion][_cuenta].texto});
+        let contador = _cuenta + 1 + "/" + info.contenedor[seccion].length + " - " 
+        this.setState({boton:seccion,cuenta: _cuenta, text_display:contador + " " + info.contenedor[seccion][_cuenta].texto});
       }
-    }
-  
+    }  
     
   render(){
     let cubo = this.props.cuboSeleccionado;
@@ -102,6 +107,9 @@ export default class InfoScreenCards extends React.Component {
                   {this.state.text_display} 
               </Card.Text>
             </Card.Body>
+            <div className="arrowContainer">
+              <a  className={this.state.infoSiguiente} > Pulsa de nuevo el botón para obtener más información. </a>
+            </div>
           </Card>
 
       </div>
