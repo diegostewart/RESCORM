@@ -16,7 +16,7 @@ export default class QuestionButtons extends React.Component {
     list.puntolimpio = "nothing"; //puntolimpio
     list.sigre = "nothing"; //sigre
   }
-  insertButton(array,button,verde,rojo){
+  insertButton(array,button,verde,rojo,clase){
     let source={ amarillo:"assets/images/Interfaz/cuboAmarillo.png",
               verde:"assets/images/Interfaz/cuboVerde.png",
               azul:"assets/images/Interfaz/cuboAzul.png",
@@ -27,7 +27,7 @@ export default class QuestionButtons extends React.Component {
 
     let buttonType =  (
       <div className="ButtonWrapper" key={button}>
-        <a onClick={this.props.onAnswer.bind(this,button)}><img className="contenedor" src={source[button]} height="100" /></a>
+        <a onClick={this.props.onAnswer.bind(this,button)}><img className={clase} src={source[button]} height="100" /></a>
         <img className={verde} src={"assets/images/Interfaz/tic_Verde.png"} height="20"/> 
         <img className={rojo} src={"assets/images/Interfaz/tic_Rojo.png"} height="20"/> 
       </div> 
@@ -60,14 +60,16 @@ export default class QuestionButtons extends React.Component {
     let buttons = [];
     let tic = "tic";
     let hidden = "hidden";
+    let clickable = "clickable"
+    let notclickable = "notclickable"
 
     if(this.props.answered){ // Pregunta Contestada
       if(this.props.correctAnswer){ // Respuesta Correcta
         for (let i = 0; i < this.props.question.opciones.length; i++){
           if(this.props.question.opciones[i] !== this.props.question.solucion){
-            this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden); // Nada en el resto
+            this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden,notclickable); // Nada en el resto
           } else{
-            this.insertButton(buttons,this.props.question.solucion,tic,hidden); //Tic en la correcta
+            this.insertButton(buttons,this.props.question.solucion,tic,hidden,notclickable); //Tic en la correcta
 
           }
         }
@@ -75,12 +77,12 @@ export default class QuestionButtons extends React.Component {
         
         for (let i = 0; i < this.props.question.opciones.length; i++){
           if(this.props.question.opciones[i]===this.props.buttonPressed){
-            this.insertButton(buttons,this.props.question.opciones[i],hidden,tic);// Cruz en la pulsada
+            this.insertButton(buttons,this.props.question.opciones[i],hidden,tic,notclickable);// Cruz en la pulsada
           }else{
             if(this.props.question.opciones[i] !== this.props.question.solucion){
-              this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden); // Nada en el resto.
+              this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden,notclickable); // Nada en el resto.
             } else {
-              this.insertButton(buttons,this.props.question.solucion,tic,hidden); // Tic en la correctaa 
+              this.insertButton(buttons,this.props.question.solucion,tic,hidden,notclickable); // Tic en la correctaa 
 
             }
           }
@@ -89,7 +91,7 @@ export default class QuestionButtons extends React.Component {
     } else{ // Si todavia no se ha contestado 
       //this.insertButton(buttons,this.props.question.solucion,hidden,hidden); // Lo comento para que la respuesta no siempre esté a la izda
       for (let i = 0; i < this.props.question.opciones.length; i++){
-        this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden); // Pinta todas las opciones sin tic o cruz
+        this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden,clickable); // Pinta todas las opciones sin tic o cruz
         
       }
     }
