@@ -39,7 +39,7 @@ export const lista_preguntas = {
       {
         "nombre": "Bote de Champú",
         "solucion": "amarillo",
-        "opciones": ["verde","azul"],
+        "opciones": ["verde","azul","amarillo"],
         "dificultad": 3,
         "imagen": "assets/images/Preguntas/Amarillo/Champu.png",
         "feedback":{
@@ -50,7 +50,7 @@ export const lista_preguntas = {
         {
         "nombre": "Comida en Conserva",
         "solucion": "amarillo",
-        "opciones": ["sigre","azul"],
+        "opciones": ["sigre","azul","amarillo"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Amarillo/ConservaComida.png",
         "feedback":{
@@ -61,7 +61,7 @@ export const lista_preguntas = {
             {
         "nombre": "Desodorante",
         "solucion": "amarillo",
-        "opciones": ["verde","puntolimpio"],
+        "opciones": ["verde","puntolimpio","amarillo"],
         "dificultad": 3,
         "imagen": "assets/images/Preguntas/Amarillo/Desodorante.png",
         "feedback":{
@@ -72,7 +72,7 @@ export const lista_preguntas = {
       {
         "nombre": "Gel de Ducha",
         "solucion": "amarillo",
-        "opciones": ["verde","azul"],
+        "opciones": ["verde","azul","amarillo"],
         "dificultad": 3,
         "imagen": "assets/images/Preguntas/Amarillo/GelDucha.png",
         "feedback":{
@@ -83,7 +83,7 @@ export const lista_preguntas = {
         {
         "nombre": "Refresco en lata",
         "solucion": "amarillo",
-        "opciones": ["marron","azul"],
+        "opciones": ["marron","azul","amarillo"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Amarillo/LataRefresco.png",
         "feedback":{
