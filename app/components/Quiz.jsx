@@ -19,6 +19,8 @@ export default class Quiz extends React.Component {
     // Sort questions based on difficulty
      let adaptive_sorted = false;
 
+     questions.sort(function(a, b){ return a.dificultad - b.dificultad; }); // Ordenamos por orden de dificultad
+
     if((this.props.config.adaptive === true) && (typeof props.user_profile === "object") && (typeof props.user_profile.learner_preference === "object") && (typeof props.user_profile.learner_preference.difficulty === "number")){
       let difficulty = props.user_profile.learner_preference.difficulty; 
       if((difficulty >= 0) && (difficulty <= 3)){
@@ -29,15 +31,19 @@ export default class Quiz extends React.Component {
           if(questions[i].dificultad === difficulty){// calculamos solo las preguntas asociadas a nuestra dificultad.
             if(typeof inicioSlice === "undefined"){
               inicioSlice = i;
-              finalSlice = inicioSlice;
+              finalSlice = i;
             }
             finalSlice = finalSlice + 1;
           }
         }
-        questions.sort(function(a, b){ return a.dificultad - b.dificultad; }); // Ordenamos por orden de dificultad
         //Truncamos el array para solo tener el nivel de dificultad seleccionado:
-        questions = questions.slice(inicioSlice,finalSlice); // inicioSlice es 0 para que al aumentar dificultades incluyamos las anteriores 
-                
+        console.log("Questions Antes = "+questions.length);
+
+        questions = questions.slice(inicioSlice,finalSlice);
+
+        console.log("Questions Despues = "+questions.length);
+
+
         questions = this.setProbability(questions);
 
         questions = Utils.shuffleArray(questions);
@@ -46,8 +52,6 @@ export default class Quiz extends React.Component {
       }
     }
 
-    
-    
     if(adaptive_sorted === false){
       questions = Utils.shuffleArray(questions);
     }
@@ -84,6 +88,18 @@ export default class Quiz extends React.Component {
     let puntolimpioQuestion = this.getQuestion(questions,"puntolimpio");
     let sigreQuestion = this.getQuestion(questions,"sigre");
 
+    azulQuestion = Utils.shuffleArray(azulQuestion);
+    amarilloQuestion = Utils.shuffleArray(amarilloQuestion);
+    verdeQuestion = Utils.shuffleArray(verdeQuestion);
+    marronQuestion = Utils.shuffleArray(marronQuestion);
+    puntolimpioQuestion = Utils.shuffleArray(puntolimpioQuestion);
+    sigreQuestion = Utils.shuffleArray(sigreQuestion);
+
+
+
+    //console.log("Preguntas Totales = " + azulQuestion.length+amarilloQuestion.length+verdeQuestion.length+marronQuestion.length+puntolimpioQuestion.length+sigreQuestion.length)
+
+
     //Parametros de configuracion
     let azul = this.props.config.probability.azul;
     let amarillo = this.props.config.probability.amarillo;
@@ -102,6 +118,7 @@ export default class Quiz extends React.Component {
     let pMarron = marron/total;
     let pPuntoLimpio = puntolimpio/total;
     let pSigre = sigre/total;
+
 
 
     //Rango de cada probabilidad
@@ -140,44 +157,52 @@ export default class Quiz extends React.Component {
           newQuestions.push(sigreQuestion.shift());
         }
      }
-
+     
      if((typeof this.props.config.n === "number") && (this.props.config.n >= 1)){
         let preguntasRestantes = [];
         if(newQuestions.length >= this.props.config.n){
           return newQuestions;
         } 
         else{
+            let azulQuestionlength = azulQuestion.length; //Es necesario crear una variable xke el azulQuestion.length varia al hacer el .shift
             if(pAzul > 0 && azulQuestion.length > 0){
-              for(let p = 0; p<azulQuestion.length; p++){
+              for(let p = 0; p<azulQuestionlength; p++){
                 preguntasRestantes.push(azulQuestion.shift());
               }
             }
+            let amarilloQuestionlength =amarilloQuestion.length;
             if(pAmarillo > 0 && amarilloQuestion.length > 0){
-              for(let p = 0; p<amarilloQuestion.length; p++){
+              for(let p = 0; p<amarilloQuestionlength; p++){
                 preguntasRestantes.push(amarilloQuestion.shift());
               }
             }
+            let verdeQuestionlength = verdeQuestion.length;
             if(pVerde > 0 && verdeQuestion.length > 0){
-              for(let p = 0; p<verdeQuestion.length; p++){
+              for(let p = 0; p<verdeQuestionlength; p++){
                 preguntasRestantes.push(verdeQuestion.shift());
               }
             }
+            let marronQuestionlength = marronQuestion.length;
             if(pMarron > 0 && marronQuestion.length > 0){
-              for(let p = 0; p<marronQuestion.length; p++){
+              for(let p = 0; p<marronQuestionlength; p++){
                 preguntasRestantes.push(marronQuestion.shift());
               }
             }
+            let puntolimpioQuestionlength = puntolimpioQuestion.length;
             if(pPuntoLimpio > 0 && puntolimpioQuestion.length > 0){
-              for(let p = 0; p<puntolimpioQuestion.length; p++){
+              for(let p = 0; p<puntolimpioQuestionlength; p++){
                 preguntasRestantes.push(puntolimpioQuestion.shift());
               }
             }
+            let sigreQuestionlength = sigreQuestion.length;
             if(pSigre > 0 && sigreQuestion.length > 0){
-              for(let p = 0; p<sigreQuestion.length; p++){
+              for(let p = 0; p<sigreQuestionlength; p++){
                 preguntasRestantes.push(sigreQuestion.shift());
               }
             }
-          for(let x = 0; x < preguntasRestantes.length+1; x++){
+            let preguntasRestanteslength = preguntasRestantes.length;
+            preguntasRestantes = Utils.shuffleArray(preguntasRestantes);
+          for(let x = 0; x < preguntasRestanteslength; x++){
             newQuestions.push(preguntasRestantes.shift());
           }
           return newQuestions
