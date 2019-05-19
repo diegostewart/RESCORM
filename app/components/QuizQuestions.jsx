@@ -47,7 +47,7 @@ export default class QuizQuestions extends React.Component {
       return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
 
-    if(this.props.question.solucion === answer){// Ha acertado la pregunta
+    if(this.props.question.solucion === answer){
       acierto +=1;
       this.setState({correctAnswer:true});
       this.setState({renderNext:true})
@@ -56,21 +56,18 @@ export default class QuizQuestions extends React.Component {
         this.handleShow();
 
       }
-    }else{    // Ha fallado la pregunta
-      // sleep(2500).then(() => { 
+    }else{
         this.setState({renderNext:true})
         if(this.props.question.feedback.negativo != "" && this.props.question.feedback.positivo != undefined){
         this.setState({feedback:this.props.question.feedback.negativo})
         this.handleShow();
         }
-      // })
     }
 
     let objective = this.props.objective;
     this.props.dispatch(objectiveAccomplished(objective.id, objective.score * acierto));
     this.setState({answered:true});
     this.setState({buttonPressed:answer});
-    //this.props.onNextQuestion();
   }
 
 
@@ -78,7 +75,8 @@ export default class QuizQuestions extends React.Component {
     return (
       <div className="question">
         <h1>{this.props.question.nombre}</h1>
-        <img src={this.props.question.imagen}/>
+        <img className="image" src={this.props.question.imagen} height="200" width="200"/>
+
         <QuestionButtons I18n={this.props.I18n} question={this.props.question} correctAnswer={this.state.correctAnswer} renderNext={this.state.renderNext} buttonPressed={this.state.buttonPressed} answered={this.state.answered} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  onNextQuestion={this.props.onNextQuestion.bind(this)} allow_finish={this.props.isLastQuestion}/>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
