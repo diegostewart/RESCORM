@@ -1,5 +1,5 @@
 div.levelChoiceWrapper{ 
-    height:100%;
+    height:10%;
     //background-color: rgb(204, 247, 232);
     //background-image: url("/assets/images/Interfaz/fondo.jpg");   
 }
@@ -12,7 +12,7 @@ div.infoButtonWrapper  {
 div.infoButtonWrapper a:nth-of-type(1) {
     position: absolute;
     right: 1%;
-    opacity: 0.2;
+    opacity: 0.7;
     transition: all 0.3s; 
 }
 
@@ -23,24 +23,30 @@ div.infoButtonWrapper a:nth-of-type(1):hover {
 
 div.infoButtonWrapper a:nth-of-type(2) {
     position: absolute;
-    left: 1%;
 
+    left: 3px;
+    opacity: 0.7;
+    transition: all 0.3s; 
+}
+
+div.infoButtonWrapper a:nth-of-type(2):hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 div.levelChoiceWrapper h1{ 
     text-align: center;
-    //margin-bottom: 50px;
 }
 
 .contenedor{
     height:100%;
-    margin: 0 auto;
+    //margin: 0 auto;
 }
 
 div.levelChoiceButton {
-    height: 100%;
+   // height: 100%;
     display: flex;
-    //justify-content:center;
+    justify-content:center;
     //align-items:center;
     margin-top: 10%;
     // flex-direction: row;
@@ -51,7 +57,7 @@ div.levelChoiceButton {
 div.levelChoiceButton button.levelSelect1, div.levelChoiceButton button.levelSelect2, div.levelChoiceButton button.levelSelect3{ 
     padding: 100px;
     border-radius: 20%;
-    margin-right: 20px;
+    margin-right: 2%;
  
     color: black;
     background: white;

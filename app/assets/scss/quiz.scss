@@ -1,3 +1,13 @@
+.quiz, .question, .Wrapper{
+  height: 100%;
+}
+
+.Wrapper{
+  padding: 5%
+}
+
+
+
 div.quizHeader p {
   font-size: 20px;
   margin-top: 25px;
@@ -20,6 +30,8 @@ div.question h1 {
 div.question div.questionButtonsWrapper {
   padding: 10px;
   display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 div.nextQuestion a{
