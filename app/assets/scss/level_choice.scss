@@ -22,14 +22,24 @@ div.infoButtonWrapper img:hover{
 
 div.levelChoiceWrapper h1{ 
     text-align: center;
-    margin-bottom: 50px;
+    //margin-bottom: 50px;
+}
+
+.contenedor{
+    height:100%;
+    margin: 0 auto;
 }
 
 div.levelChoiceButton {
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    //justify-content:center;
+    //align-items:center;
+    margin-top: 10%;
+    // flex-direction: row;
+    // justify-content: center;
 }
+
 
 div.levelChoiceButton button.levelSelect1, div.levelChoiceButton button.levelSelect2, div.levelChoiceButton button.levelSelect3{ 
     padding: 100px;
