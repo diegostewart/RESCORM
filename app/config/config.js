@@ -4,14 +4,14 @@ export let GLOBAL_CONFIG = {
     debug_scorm_api:false,
     debug_scorm_api_window:false,
     available_locales:["en", "es"],
-    // locale: "es",
+    locale: "es",
     adaptive:true,
     finish_screen:true,
     scorm:{
       completion_threshold:0.5,
       score_threshold:0.6,
     },
-    n:5,
+    n:25,
     lvl_selection:0,
     probability:{
       amarillo:1,
