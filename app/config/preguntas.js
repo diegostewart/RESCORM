@@ -6,7 +6,7 @@ export const lista_preguntas = {
       {
         "nombre": "Botella de Agua",
         "solucion": "amarillo",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Amarillo/Botella_Agua.png",
         "feedback":{
@@ -17,7 +17,7 @@ export const lista_preguntas = {
         {
         "nombre": "Brik de Leche",
         "solucion": "amarillo",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","azul","marron"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Amarillo/BrikLeche.png",
         "feedback":{
@@ -28,7 +28,7 @@ export const lista_preguntas = {
         {
         "nombre": "Carton de Zumo ",
         "solucion": "amarillo",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","sigre"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Amarillo/CartonZumo.png",
         "feedback":{
@@ -46,7 +46,7 @@ export const lista_preguntas = {
         {
         "nombre": "Comida en Conserva",
         "solucion": "amarillo",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","marron"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Amarillo/ConservaComida.png",
         "feedback":{
@@ -73,7 +73,7 @@ export const lista_preguntas = {
         {
         "nombre": "Refresco en lata",
         "solucion": "amarillo",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","marron"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Amarillo/LataRefresco.png",
         "feedback":{
@@ -82,7 +82,7 @@ export const lista_preguntas = {
         {
         "nombre": "Caja de Zapatos",
         "solucion": "azul",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["verde","azul","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Azul/CajaZapatos.png",
         "feedback":{
@@ -98,7 +98,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Caja de Cereales",
         "solucion": "azul",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","marron"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Azul/Cereales.png",
         "feedback":{
@@ -106,7 +106,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Folio de Papel",
         "solucion": "azul",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Azul/Folio.png",
         "feedback":{
@@ -122,7 +122,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Papel de Regalo",
         "solucion": "azul",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["verde","azul","marron","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Azul/PapelRegalo.png",
         "feedback":{
@@ -131,7 +131,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Un Periódico",
         "solucion": "azul",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["azul","marron","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Azul/Periodico.png",
         "feedback":{
@@ -139,7 +139,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Una Revista",
         "solucion": "azul",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Azul/Revista.png",
         "feedback":{
@@ -147,7 +147,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Restos de Berenjena",
         "solucion": "marron",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["azul","marron","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Marron/Berenjena.png",
         "feedback":{
@@ -165,7 +165,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Cascaras de Huevo",
         "solucion": "marron",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","azul","marron","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Marron/CascaraHuevo.png",
         "feedback":{
@@ -173,7 +173,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Restos de Manzana",
         "solucion": "marron",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["marron","sigre","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Marron/Manzana.png",
         "feedback":{
@@ -189,7 +189,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Cascara de Plátano",
         "solucion": "marron",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","marron"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Marron/Platano.png",
         "feedback":{
@@ -197,7 +197,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Restos de Zanahoria",
         "solucion": "marron",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","marron"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Marron/Zanahoria.png",
         "feedback":{
@@ -205,7 +205,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Botella de Vino",
         "solucion": "verde",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Verde/Botella_Vino.png",
         "feedback":{
@@ -213,7 +213,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Botella de Cerveza",
         "solucion": "verde",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["verde","sigre","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Verde/BotellaCerveza.png",
         "feedback":{
@@ -221,7 +221,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Botella de Refresco",
         "solucion": "verde",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","marron"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Verde/BotellaRefresco.png",
         "feedback":{
@@ -229,7 +229,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Bote de Mermelada",
         "solucion": "verde",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","marron","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Verde/Mermelada.png",
         "feedback":{
@@ -253,7 +253,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Aceite Usado",
         "solucion": "puntolimpio",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","marron","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/PuntoLimpio/AceiteOliva.png",
         "feedback":{
@@ -263,7 +263,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Una Bateria",
         "solucion": "puntolimpio",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/PuntoLimpio/Bateria.png",
         "feedback":{
@@ -287,7 +287,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Un Frigorifico Antiguo",
         "solucion": "puntolimpio",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","marron","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/PuntoLimpio/Frigorifico.png",
         "feedback":{
@@ -304,7 +304,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Un Teléfono Movil",
         "solucion": "puntolimpio",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","azul","marron","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/PuntoLimpio/Movil.png",
         "feedback":{
@@ -312,7 +312,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Un Neumatico",
         "solucion": "puntolimpio",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/PuntoLimpio/Neumatico.png",
         "feedback":{
@@ -337,7 +337,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Medicamentos Caducados",
         "solucion": "sigre",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","azul","marron","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Sigre/MedicamentoCaducados.png",
         "feedback":{
@@ -345,7 +345,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Envases de Medicamentos ",
         "solucion": "sigre",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","marron","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Sigre/MedicamentoEnvase.png",
         "feedback":{
@@ -353,7 +353,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Medicamentos que no Necesites",
         "solucion": "sigre",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["verde","azul","marron","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Sigre/MedicamentoNoNecesites.png",
         "feedback":{
@@ -361,7 +361,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Frenadol Caducado",
         "solucion": "sigre",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","sigre","puntolimpio"],
         "dificultad": 1,
         "imagen": "assets/images/Preguntas/Sigre/frenadolCaducado.png",
         "feedback":{
@@ -369,13 +369,13 @@ export const lista_preguntas = {
       }, {
         "nombre": "Inhalador para el Asma",
         "solucion": "sigre",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","marron","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/Sigre/inaladorAsma.png",
         "feedback":{
         }
       }, {
-        "nombre": "Vitaminas que ya no Tomas",
+        "nombre": "Vitaminas que ya no Consumes",
         "solucion": "sigre",
         "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
         "dificultad": 2,
@@ -393,7 +393,7 @@ export const lista_preguntas = {
       }, {
         "nombre": "Un Cepillo de Dientes",
         "solucion": "puntolimpio",
-        "opciones": ["amarillo","verde","azul","marron","sigre","puntolimpio"],
+        "opciones": ["amarillo","verde","azul","sigre","puntolimpio"],
         "dificultad": 2,
         "imagen": "assets/images/Preguntas/PuntoLimpio/toothbrush.png",
         "feedback":{
