@@ -11,7 +11,7 @@ export let GLOBAL_CONFIG = {
       completion_threshold:0.5,
       score_threshold:0.6,
     },
-    n:25,
+    n:10,
     lvl_selection:0,
     probability:{
       amarillo:1,
@@ -34,7 +34,7 @@ export let GLOBAL_CONFIG = {
       score_threshold:0.6,
     },
     n:undefined,
-    lvl_selection:2,
+    lvl_selection:0,
     probability:{
       amarillo:1,
       marron:0,
