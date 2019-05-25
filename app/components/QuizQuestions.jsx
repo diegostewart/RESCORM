@@ -46,6 +46,10 @@ export default class QuizQuestions extends React.Component {
     const sleep = (milliseconds) => {
       return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
+    
+    if(this.state.renderNext === true){
+      return;
+    }
 
     if(this.props.question.solucion === answer){
       acierto +=1;

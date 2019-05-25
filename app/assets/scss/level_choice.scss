@@ -5,20 +5,27 @@ div.levelChoiceWrapper{
 }
 
 div.infoButtonWrapper  {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}  
+    margin-top: 1%;
+    position: relative;
+}
 
-div.infoButtonWrapper img {
-    opacity: 0.7;
-    transition: all 0.3s;        
-} 
+div.infoButtonWrapper a:nth-of-type(1) {
+    position: absolute;
+    right: 1%;
+    opacity: 0.2;
+    transition: all 0.3s; 
+}
 
-div.infoButtonWrapper img:hover{
+div.infoButtonWrapper a:nth-of-type(1):hover {
     opacity: 1;
-    cursor: pointer;  
-} 
+    cursor: pointer;
+}
+
+div.infoButtonWrapper a:nth-of-type(2) {
+    position: absolute;
+    left: 1%;
+
+}
 
 div.levelChoiceWrapper h1{ 
     text-align: center;

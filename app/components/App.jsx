@@ -42,6 +42,19 @@ export class App extends React.Component {
     let appContent = "";
     let render = this.props.screen_render;
 
+    let nivel = GLOBAL_CONFIG.lvl_selection;
+
+    if(nivel>=0 && nivel <4){
+      if(nivel!=0){
+        this.props.dispatch(renderScreen(1))
+        this.props.user_profile.learner_preference.difficulty = nivel;
+      }
+    }
+    else{
+      window.alert("Fichero de configuración erróneo: lvl_selection debe ser un valor de 1 a 3")
+      return
+    }
+
     if((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)){
         
           switch (render){

@@ -216,7 +216,7 @@ export const lista_preguntas = {
         "solucion": "verde",
         "opciones": ["verde","sigre"],
         "dificultad": 1,
-        "imagen": "assets/images/Preguntas/Verde/Botella_vino.jpeg",
+        "imagen": "assets/images/Preguntas/Verde/Botella_Vino.jpeg",
         "feedback":{
         }
       }, {
