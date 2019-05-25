@@ -79,7 +79,7 @@ export default class QuizQuestions extends React.Component {
     return (
       <div className="question">
         <h1>{this.props.question.nombre}</h1>
-        <img className="image" src={this.props.question.imagen} height="200" width="200"/>
+        <img className="image" src={this.props.question.imagen} height="200"/>
 
         <QuestionButtons I18n={this.props.I18n} question={this.props.question} correctAnswer={this.state.correctAnswer} renderNext={this.state.renderNext} buttonPressed={this.state.buttonPressed} answered={this.state.answered} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  onNextQuestion={this.props.onNextQuestion.bind(this)} allow_finish={this.props.isLastQuestion}/>
 

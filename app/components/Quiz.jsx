@@ -37,12 +37,9 @@ export default class Quiz extends React.Component {
           }
         }
         //Truncamos el array para solo tener el nivel de dificultad seleccionado:
-        console.log("Questions Antes = "+questions.length);
+       
 
         questions = questions.slice(inicioSlice,finalSlice);
-
-        console.log("Questions Despues = "+questions.length);
-
 
         questions = this.setProbability(questions);
 

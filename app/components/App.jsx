@@ -16,6 +16,7 @@ import InfoScreen from './InfoScreen.jsx';
 import InfoScreenCards from './InfoScreenCards.jsx';
 
 
+
 export class App extends React.Component {
   constructor(props){
     super(props);
@@ -84,7 +85,7 @@ export class App extends React.Component {
               appContent = (
                 <InfoScreenCards onSelectScreen={this.onSelectScreen.bind(this)} cuboSeleccionado={this.state.tarjetaSeleccionada}/>
               );
-            break;
+            break;           
 
             default:
             this.props.user_profile.learner_preference.difficulty = 0;
