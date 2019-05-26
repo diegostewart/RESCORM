@@ -1,6 +1,5 @@
 import React from 'react'; 
-import * as Utils from '../vendors/Utils.js';
-import QuestionButton from './QuestionButton.jsx';
+import {ProgressBar} from 'react-bootstrap';
 
 
 export default class QuestionButtons extends React.Component {
@@ -102,6 +101,7 @@ export default class QuestionButtons extends React.Component {
            {buttons}
          </div>
         <div className="nextQuestion">
+        <ProgressBar className={this.props.className} variant={this.props.variant} now={this.props.now}/>
          {nextQuestionButton}   
         </div>
        </div>

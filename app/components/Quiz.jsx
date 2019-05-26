@@ -65,6 +65,7 @@ export default class Quiz extends React.Component {
       current_question_index:1,
     };
   }
+
   componentDidMount(){
     // Create objectives (One per question included in the quiz)
     let objectives = [];
@@ -91,11 +92,6 @@ export default class Quiz extends React.Component {
     marronQuestion = Utils.shuffleArray(marronQuestion);
     puntolimpioQuestion = Utils.shuffleArray(puntolimpioQuestion);
     sigreQuestion = Utils.shuffleArray(sigreQuestion);
-
-
-
-    //console.log("Preguntas Totales = " + azulQuestion.length+amarilloQuestion.length+verdeQuestion.length+marronQuestion.length+puntolimpioQuestion.length+sigreQuestion.length)
-
 
     //Parametros de configuracion
     let azul = this.props.config.probability.azul;
@@ -246,7 +242,7 @@ export default class Quiz extends React.Component {
     let currentQuestionRender = "";
 
     if(difficulty<4){
-      currentQuestionRender = (<QuizQuestions quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective}  onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
+      currentQuestionRender = (<QuizQuestions  quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective}  onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
     }
     else{
       currentQuestionRender = "Question difficulty not supported";
@@ -255,7 +251,7 @@ export default class Quiz extends React.Component {
     return (
       <div className="quiz">
         <QuizHeader I18n={this.props.I18n} quiz={this.state.quiz} currentQuestionIndex={this.state.current_question_index}/>
-        {currentQuestionRender}
+        {currentQuestionRender}          
       </div>
     );
   }
