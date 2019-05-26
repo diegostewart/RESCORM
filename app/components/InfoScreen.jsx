@@ -1,6 +1,6 @@
 import React from 'react';
 import './../assets/scss/info_screen.scss';
-import {Card,Button,Carousel} from 'react-bootstrap';
+import {Button,Carousel} from 'react-bootstrap';
 
 export default class InfoScreen extends React.Component {
 
@@ -8,32 +8,6 @@ export default class InfoScreen extends React.Component {
     
 
     return (
-      // <div className="infoScreenWrapper">
-      //   <a onClick={this.props.onSelectScreen.bind(this,0,0)}><img src={"assets/images/Interfaz/back.png"} height="50" /></a>
-      //   <div className="images">
-
-      //   <img src={"assets/images/Interfaz/cuboAzul.png"} height="200"  />
-      //   <img src={"assets/images/Interfaz/cuboAmarillo.png"} height="200" />
-      //   <img src={"assets/images/Interfaz/cuboMarron.png"} height="200" />
-      //   <img src={"assets/images/Interfaz/cuboVerde.png"} height="200" />
-      //   <img src={"assets/images/Interfaz/puntoLimpio.png"} height="200" />
-      //   <img src={"assets/images/Interfaz/Sigre.png"} height="200" />
-      //   </div>
-      //   <Card style={{ width: '18rem' }}>
-      //       <Card.Img variant="top" src="assets/images/Interfaz/cuboAzul.png" />
-      //       <Card.Body>
-      //         <Card.Title>Card Title</Card.Title>
-      //         <Card.Text>
-      //           Some quick example text to build on the card title and make up the bulk of
-      //           the card's content.
-      //         </Card.Text>
-      //         <Button variant="primary">Go somewhere</Button>
-      //       </Card.Body>
-      //     </Card>
-
-
-
-      // </div>
       <div className="infoScreenWrapper">
         <a onClick={this.props.onSelectScreen.bind(this,0,0)}><img src={"assets/images/Interfaz/back.png"} height="50" /></a>
         <div className="Cabecera">
