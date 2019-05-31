@@ -13,7 +13,7 @@ export default class QuizQuestions extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
-    this.timer = 0;
+    this.timer = undefined;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
 
@@ -24,8 +24,7 @@ export default class QuizQuestions extends React.Component {
       buttonPressed:"",
       show: false,
       feedback:"",
-      time: {},
-      seconds: 30,
+      seconds: 150,
       variant: "success",
       timer: "timer"
     }
@@ -39,27 +38,10 @@ export default class QuizQuestions extends React.Component {
     this.setState({ show: true });
   }
 
-  secondsToTime(secs){
-    let hours = Math.floor(secs / (60 * 60));
-
-    let divisor_for_minutes = secs % (60 * 60);
-    let minutes = Math.floor(divisor_for_minutes / 60);
-
-    let divisor_for_seconds = divisor_for_minutes % 60;
-    let seconds = Math.ceil(divisor_for_seconds);
-
-    let obj = {
-      "h": hours,
-      "m": minutes,
-      "s": seconds
-    };
-    return obj;
-  }
+ 
 
   componentDidMount(){
-    let timeLeftVar = this.secondsToTime(this.state.seconds);
-    this.setState({ time: timeLeftVar });
-    this.timer = setInterval(this.countDown, 1000 );
+    this.startTimer();
   }
     
   
@@ -68,14 +50,14 @@ export default class QuizQuestions extends React.Component {
       this.setState({answered:false});
       this.setState({correctAnswer:false});
       this.setState({renderNext:false});
-      this.setState({seconds:31});
       this.setState({timer:"timer"});
     }
   }
 
   startTimer() {
-    if (this.timer == 0 && this.state.seconds > 0) {
-      this.timer = setInterval(this.countDown, 1000);
+    this.setState({seconds:300})
+    if (typeof this.timer === "undefined") {
+      this.timer = setInterval(this.countDown, 100);
     }
   }
 
@@ -83,24 +65,22 @@ export default class QuizQuestions extends React.Component {
     // Remove one second, set state so a re-render happens.
     let seconds = this.state.seconds - 1;
     this.setState({
-      time: this.secondsToTime(seconds),
-      seconds: seconds,
+      seconds: seconds
     });
 
-    if(seconds >20 ){
+    if(seconds >200 ){
       this.setState({variant:"success"})
     }
-    if(seconds < 20 && seconds > 10){
+    if(seconds < 200 && seconds > 100){
       this.setState({variant:"warning"})
     }
 
-    if(seconds < 10){
+    if(seconds < 100){
       this.setState({variant:"danger"})
     }
   
     // Check if we're at zero.
     if (seconds == 0) { 
-      clearInterval(this.timer);
       this.onAnswer("answer");
     }
   }
@@ -108,9 +88,7 @@ export default class QuizQuestions extends React.Component {
   onAnswer(answer){
     let acierto = 0;
 
-    const sleep = (milliseconds) => {
-      return new Promise(resolve => setTimeout(resolve, milliseconds))
-    }
+
     
     if(this.state.renderNext === true){
       return;
@@ -138,6 +116,14 @@ export default class QuizQuestions extends React.Component {
     this.setState({answered:true});
     this.setState({buttonPressed:answer});
     this.setState({timer:"hidden"});
+    clearInterval(this.timer);
+    this.timer= undefined;
+
+  }
+
+  onNextQuestion(){
+    this.props.onNextQuestion();
+    this.startTimer();
   }
 
 
@@ -146,7 +132,7 @@ export default class QuizQuestions extends React.Component {
       <div className="question">
         <h1>{this.props.question.nombre}</h1>
         <img className="image" src={this.props.question.imagen} height="200"/>
-        <QuestionButtons I18n={this.props.I18n} className={this.state.timer} variant={this.state.variant} now={10*(this.state.time.s)/3} question={this.props.question} correctAnswer={this.state.correctAnswer} renderNext={this.state.renderNext} buttonPressed={this.state.buttonPressed} answered={this.state.answered} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  onNextQuestion={this.props.onNextQuestion.bind(this)} allow_finish={this.props.isLastQuestion}/>
+        <QuestionButtons I18n={this.props.I18n} className={this.state.timer} variant={this.state.variant} now={100*(this.state.seconds)/300} question={this.props.question} correctAnswer={this.state.correctAnswer} renderNext={this.state.renderNext} buttonPressed={this.state.buttonPressed} answered={this.state.answered} difficulty={this.props.difficulty} onAnswer={this.onAnswer.bind(this)}  onNextQuestion={this.onNextQuestion.bind(this)} allow_finish={this.props.isLastQuestion}/>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
