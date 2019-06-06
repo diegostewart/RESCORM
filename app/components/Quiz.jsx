@@ -36,9 +36,9 @@ export default class Quiz extends React.Component {
             finalSlice = finalSlice + 1;
           }
         }
-        //Truncamos el array para solo tener el nivel de dificultad seleccionado:
-       
 
+        //Truncamos el array para solo tener el nivel de dificultad seleccionado:
+      
         questions = questions.slice(inicioSlice,finalSlice);
 
         questions = this.setProbability(questions);
@@ -157,7 +157,7 @@ export default class Quiz extends React.Component {
           return newQuestions;
         } 
         else{
-            let azulQuestionlength = azulQuestion.length; //Es necesario crear una variable xke el azulQuestion.length varia al hacer el .shift
+            let azulQuestionlength = azulQuestion.length; 
             if(pAzul > 0 && azulQuestion.length > 0){
               for(let p = 0; p<azulQuestionlength; p++){
                 preguntasRestantes.push(azulQuestion.shift());

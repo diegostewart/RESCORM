@@ -17,7 +17,6 @@ export default class InfoScreen extends React.Component {
           <Carousel>
             <Carousel.Item>
               <img
-                //className="prueba" // className="d-block w-100"
                 src="assets/images/Interfaz/cuboAzul.png"
                 alt="Primera slide"
                 hspace="50"
@@ -31,7 +30,6 @@ export default class InfoScreen extends React.Component {
 
             <Carousel.Item>
               <img
-                //className="d-block h-100"
                 src="assets/images/Interfaz/cuboAmarillo.png"
                 alt="Segunda slide"
                 hspace="50"
@@ -45,7 +43,6 @@ export default class InfoScreen extends React.Component {
 
             <Carousel.Item>
               <img
-                //className="d-block h-100"
                 src="assets/images/Interfaz/cuboVerde.png"
                 alt="Tercera slide"
                 hspace="50"
@@ -59,7 +56,6 @@ export default class InfoScreen extends React.Component {
 
              <Carousel.Item>
               <img
-                //className="d-block h-100" // className="d-block w-100"
                 src="assets/images/Interfaz/cuboMarron.png"
                 alt="Cuarta slide"
                 hspace="50"
@@ -73,7 +69,6 @@ export default class InfoScreen extends React.Component {
 
              <Carousel.Item>
               <img
-                //className="d-block h-100" // className="d-block w-100"
                 src="assets/images/Interfaz/cuboPuntoLimpio.png"
                 alt="Quinta slide"
                 hspace="50"
@@ -88,7 +83,6 @@ export default class InfoScreen extends React.Component {
 
              <Carousel.Item>
               <img
-                //className="d-block h-100" // className="d-block w-100"
                 src="assets/images/Interfaz/cuboSigre.png"
                 alt="Sexta slide"
                 hspace="50"

@@ -1,11 +1,6 @@
-div.levelChoiceWrapper{ 
-    height:10%;
-    //background-color: rgb(204, 247, 232);
-    //background-image: url("/assets/images/Interfaz/fondo.jpg");   
-}
 
 div.infoButtonWrapper  {
-    margin-top: 1%;
+    //margin-top: 1%;
     position: relative;
 }
 
@@ -40,17 +35,12 @@ div.levelChoiceWrapper h1{
 
 .contenedor{
     height:100%;
-    //margin: 0 auto;
 }
 
 div.levelChoiceButton {
-   // height: 100%;
     display: flex;
     justify-content:center;
-    //align-items:center;
     margin-top: 10%;
-    // flex-direction: row;
-    // justify-content: center;
 }
 
 

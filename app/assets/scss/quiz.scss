@@ -1,7 +1,3 @@
-.quiz, .question, .Wrapper{
-  height: 100%;
-}
-
 div.quizHeader p {
   font-size: 20px;
   margin-top: 25px;
@@ -44,9 +40,9 @@ div.nextQuestion a:hover {
 html, body, #root{
   height: 100%;
   width:100%;
-  margin: 0;
-  padding: 0;
 }
+
+
 
 div.ButtonWrapper{
   position: relative;

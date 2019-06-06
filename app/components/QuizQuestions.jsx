@@ -62,7 +62,6 @@ export default class QuizQuestions extends React.Component {
   }
 
   countDown() {
-    // Remove one second, set state so a re-render happens.
     let seconds = this.state.seconds - 1;
     this.setState({
       seconds: seconds
@@ -79,7 +78,6 @@ export default class QuizQuestions extends React.Component {
       this.setState({variant:"danger"})
     }
   
-    // Check if we're at zero.
     if (seconds == 0) { 
       this.onAnswer("answer");
     }

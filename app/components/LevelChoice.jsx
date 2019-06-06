@@ -1,6 +1,5 @@
 import React from 'react';
 import './../assets/scss/level_choice.scss';
-import {renderScreen} from '../reducers/actions.jsx'
 
 import {Row,Col,Container,Modal,Button} from 'react-bootstrap';
 
@@ -34,8 +33,6 @@ export default class LevelChoice extends React.Component {
         <div className="infoButtonWrapper">
           <a className="info" onClick={this.props.onSelectScreen.bind(this,2,0)}><img src={"assets/images/Interfaz/info.png"} height="50" /></a>
           <a className="information" onClick={this.handleShow}><img src={"assets/images/Interfaz/information.png"} height="15" /></a>
-
-          {/* <a className="git" target="_blank" href="https://github.com/diegostewart/RESCORM"><img src="assets/images/Interfaz/IconoQuiz.png" height="50" /></a> */}
         </div>
         <h1>Bienvenido al Juego Interactivo de Reciclaje</h1>
         <div className="levelChoiceButton">

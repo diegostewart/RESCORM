@@ -7,14 +7,7 @@ export default class QuestionButtons extends React.Component {
     super(props);
   }
 
-  setListDisabled(list){
-    list.amarillo = "nothing"; //amarillo
-    list.verde = "nothing"; //verde
-    list.azul = "nothing"; //azul
-    list.marron = "nothing"; //marron
-    list.puntolimpio = "nothing"; //puntolimpio
-    list.sigre = "nothing"; //sigre
-  }
+
   insertButton(array,button,verde,rojo,clase){
     let source={ amarillo:"assets/images/Interfaz/cuboAmarillo.png",
               verde:"assets/images/Interfaz/cuboVerde.png",
@@ -43,15 +36,6 @@ export default class QuestionButtons extends React.Component {
       nextQuestionButton = <a onClick={this.props.onNextQuestion.bind(this)}><img src={"assets/images/Interfaz/flecha.png"} height="75" /></a>
       }
 
-      // this.setListDisabled(disableButton);
-      // let bpress = this.props.buttonPressed;
-      // if(this.props.correctAnswer){
-      //   disableButton[bpress] = "acierto";
-      //  }else{
-      //    let correct = this.props.question.solucion;
-      //   // disableButton[bpress] = "fallo"; // Esta se queda un poco mas visible que es la que has marcado
-      //     disableButton[correct] = "correcta";
-      //  }
 
       }
 
@@ -88,7 +72,6 @@ export default class QuestionButtons extends React.Component {
         }
       }
     } else{ // Si todavia no se ha contestado 
-      //this.insertButton(buttons,this.props.question.solucion,hidden,hidden); // Lo comento para que la respuesta no siempre esté a la izda
       for (let i = 0; i < this.props.question.opciones.length; i++){
         this.insertButton(buttons,this.props.question.opciones[i],hidden,hidden,clickable); // Pinta todas las opciones sin tic o cruz
         
