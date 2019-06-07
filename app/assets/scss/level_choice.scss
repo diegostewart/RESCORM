@@ -33,9 +33,7 @@ div.levelChoiceWrapper h1{
     text-align: center;
 }
 
-.contenedor{
-    height:100%;
-}
+
 
 div.levelChoiceButton {
     display: flex;
@@ -45,7 +43,7 @@ div.levelChoiceButton {
 
 
 div.levelChoiceButton button.levelSelect1, div.levelChoiceButton button.levelSelect2, div.levelChoiceButton button.levelSelect3{ 
-    padding: 100px;
+    padding: 10%;
     border-radius: 20%;
     margin-right: 2%;
  

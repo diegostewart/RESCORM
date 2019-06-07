@@ -36,15 +36,12 @@ export default class LevelChoice extends React.Component {
         </div>
         <h1>Bienvenido al Juego Interactivo de Reciclaje</h1>
         <div className="levelChoiceButton">
-        <Container>
-          <Row>
-            <Col> <button className="levelSelect1"  onClick={this.props.onSelectScreen.bind(this,1,1)} >NIVEL 1</button> </Col>
-            <Col> <button className="levelSelect2"  onClick={this.props.onSelectScreen.bind(this,1,2)} >NIVEL 2</button> </Col>
-            <Col> <button className="levelSelect3"  onClick={this.props.onSelectScreen.bind(this,1,3)} >NIVEL 3</button> </Col>
-          </Row>
-          </Container>
 
+        <button className="levelSelect1"  onClick={this.props.onSelectScreen.bind(this,1,1)} >NIVEL 1</button>
+        <button className="levelSelect2"  onClick={this.props.onSelectScreen.bind(this,1,2)} >NIVEL 2</button>
+        <button className="levelSelect3"  onClick={this.props.onSelectScreen.bind(this,1,3)} >NIVEL 3</button>
 
+    
           <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Información Adicional</Modal.Title>
