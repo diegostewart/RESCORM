@@ -45,7 +45,7 @@ export class App extends React.Component {
 
     let nivel = GLOBAL_CONFIG.lvl_selection;
 
-    if(nivel>=0 && nivel <4){
+    if(nivel>=0 && nivel <5){
       if(nivel!=0){
         this.props.dispatch(renderScreen(1))
         this.props.user_profile.learner_preference.difficulty = nivel;

@@ -47,6 +47,9 @@ export default class Quiz extends React.Component {
         
         adaptive_sorted = true;
       }
+      else if(difficulty == 4){
+        questions = Utils.shuffleArray(questions);
+      }
     }
 
     if(adaptive_sorted === false){
@@ -241,7 +244,7 @@ export default class Quiz extends React.Component {
     let onResetQuiz = this.onResetQuiz.bind(this);
     let currentQuestionRender = "";
 
-    if(difficulty<4){
+    if(difficulty<5){
       currentQuestionRender = (<QuizQuestions  quiz={this.props.quiz} question={currentQuestion} difficulty={this.props.user_profile.learner_preference.difficulty} dispatch={this.props.dispatch} I18n={this.props.I18n} objective={objective}  onNextQuestion={onNextQuestion} onResetQuiz={onResetQuiz} isLastQuestion={isLastQuestion} quizCompleted={this.props.tracking.finished}/>);
     }
     else{

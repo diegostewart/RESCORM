@@ -11,6 +11,10 @@ export default class Header extends React.Component {
     let headerRender;
     let trackingTexts = [];
     let porcentajeTruncado = Math.trunc(this.props.tracking.progress_measure * 100);
+    let dif = this.props.user_profile.learner_preference.difficulty;
+    if(this.props.user_profile.learner_preference.difficulty == 4){
+      dif = "Aleatoria"
+    }
 
     if(typeof this.props.tracking.score === "number"){
       trackingTexts.push(this.props.I18n.getTrans("i.score") + ": " + (this.props.tracking.score * 100).toFixed(1) + "%");
@@ -38,7 +42,7 @@ export default class Header extends React.Component {
     headerRender =(
       <h3>
       <span className="puntuacion" >{"Puntuación: "+(this.props.tracking.score * 100).toFixed(1) + "%"} </span>
-      <span className="dificultad" >{"Dificultad: " + this.props.user_profile.learner_preference.difficulty} </span>
+      <span className="dificultad" >{"Dificultad: " + dif} </span>
       </h3>
     );
 
